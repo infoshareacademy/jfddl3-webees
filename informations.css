@@ -1,0 +1,10 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.flex-container-img{
+    width: 100%;
+
+}
