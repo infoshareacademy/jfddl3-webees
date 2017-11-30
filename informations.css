@@ -4,7 +4,14 @@
     justify-content: space-around;
     align-items: flex-start;
 }
+
 .flex-container-img{
     width: 100%;
+
+}
+
+div{
+
+    width:560px;
 
 }
