@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+}
+
+body {
+    font-family: Ubuntu, sans-serif;
+    font-size: 20px;
+    background: #FFD99B;
+}
+
+
+.top{
+    height: 15vh;
+    background-color: #132326;
+    color: #FFD99B;
+    box-shadow: 0 0 20px #132326;
+}
+
+header a.right{
+    padding: 10px;
+    background: transparent;
+    border-radius: 8px;
+    border: 2px solid #FFD99B;
+    text-decoration: none;
+    color: #FFD99B;
+}
+
+.zajawka{
+    background-image: url("../images/bg.jpg");
+    height: 85vh;
+}
+
+.main{
+    padding: 100px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 42px;
+    color: #BF352F;
+    font-size: 30px;
+    text-align: center;
+}
+
+.flex-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent{
+    position: relative;
+}
+
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.right{
+    position: absolute;
+    left: 95%;
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
