@@ -1,0 +1,26 @@
+body
+
+
+.container{
+    padding:150px;
+    width: 500px;
+    float: left;
+    background-color: red;
+}
+
+
+.header{
+    height: 800px;
+        background-color: green;
+}
+
+.content{
+    height: 50px;
+    background-color: aquamarine;
+}
+
+.footer {
+
+    height: 40px;
+    clear: both;
+}
