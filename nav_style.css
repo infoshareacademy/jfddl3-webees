@@ -1,9 +1,41 @@
 .nav {
 
-    background-color: #FFD99B;
-
-
+    background-color: rgba(255, 217, 155, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
 
 
 }
+
+.nav li {
+
+    display: inline-block;
+    list-style: none;
+    margin: auto;
+    padding: 10px;
+    color: #132326;
+
+}
+
+.nav ul {
+
+    text-align: center;
+
+}
+
+
+
+
+
+
+/*czerwony:       #BF352F*/
+/*beżowy:         #FFD99B*/
+/*jasnozielony:   #88A34F*/
+/*ciemnozielony:  #224732*/
+/*bardzo ciemny:  #132326*/
+
+
+
 
