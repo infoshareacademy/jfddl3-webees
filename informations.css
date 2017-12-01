@@ -5,13 +5,39 @@
     align-items: flex-start;
 }
 
-.flex-container-img{
+
+
+div {
+
+    width: 480px;
+    padding: 20px;
+    margin:20px;
+    font-size: 26px;
+    font-family: Ubuntu;
+    color:#FFD99B;
+}
+
+body{
+    background-color:#132326;
+    margin: 140px 100px 140px 100px;
+
+
+}
+
+.button {
+    color: #132326;
+    border: #88A34F;
+    border-radius: 10px;
+    background-color: #88A34F;
+    margin: 20px;
+    padding: 15px;
+    text-decoration: none;
+
+}
+
+.img{
+
+    margin: 1.32em;
     width: 100%;
-
 }
 
-div{
-
-    width:560px;
-
-}
