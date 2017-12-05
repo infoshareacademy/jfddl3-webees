@@ -17,7 +17,7 @@ bardzo ciemny:  #132326, rgba(19,35,38,1)*/
 
 
 
-div {
+.columns {
 
     width:25em;
     padding:0.5em;
@@ -30,10 +30,15 @@ div {
 
 body{
     background-color:#132326;
-    margin: 9em 1em 2em 1em;
 
 
 }
+
+.first-column{
+
+    margin:1em ;
+}
+
 
 .button:hover{
     background-color:#88A34F;
@@ -74,7 +79,29 @@ body{
 
 }
 
-span{
+div.icons-list{
     display: inline-block;
+    border: 5px solid #88A34F;
+    width:15em;
+    height:5em;
+    border-radius:7em;
+    text-align: center;
 
+}
+
+.fa{
+    font-size:4em;
+    padding:0.05em;
+    margin:0.05em;
+}
+
+footer {
+    color: #132326;
+    background-color: #FFD99B;
+    font-family: Ubuntu;
+    text-align: center;
+}
+
+.right-reserved{
+line-height: 2em;
 }
