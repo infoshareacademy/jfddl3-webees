@@ -1,5 +1,3 @@
-body
-
 
 .container{
     padding:50px;
@@ -11,29 +9,53 @@ body
 }
 
 
-
 .content{
     width: 100%;
     display: block;
-    height: 800px;
+    height: 50%;
     background-color: aquamarine;
 }
 
-.footer {
-    height: 5em;
+
+.team{
     width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.team_1{
+    background: #f2ff68;
     display: flex;
 }
 
-ul {
-     display: flex;
-    background-color: bisque;
-     justify-content: center;
-    height: 3em;
- }
 
-social {
+.team_2{
+    background: coral;
+}
 
-    list-style-type: none;
+.team_3 {
+    background: lawngreen;
+}
 
+.team_4{
+    background: #f2ff68;
+}
+
+
+.footer {
+    height: 20px;
+    width: 1000px;
+    display: flex;
+
+}
+
+.social{
+    width: 1000px;
+    height:20px;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+. team{
+     text-align: justify;
 }
