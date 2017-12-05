@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WeBees Map App</title>
 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
 
 </head>
@@ -13,31 +14,30 @@
 
 <body>
 
-<header class="top parent">
-    <h1 class="left">WEBEES MAP APP</h1>
+<header class="top">
+    <img src="images/leaves.svg" alt="leaves logo" class="left">
 
-    <a href="#" class="button">Zaloguj</a>
+    <a href="#" class="button right">Zaloguj</a>
 
 </header>
-<main class="zajawka parent">
 
+<main class="main">
     <div class="formular">
-        <a href="#" class="send">Napisz do nas</a>
         <form action="#" method="POST">
-            <input type="text" name="to" placeholder="Email">
-            <input type="text" name="subject" placeholder="temat">
-            <input type="text" name="message" placeholder="message">
-            <input type="hidden" name="reply_to" value="p.lorencowicz@gmail.com">
-            <input type="hidden" name="redirect" value="http://google.com">
-            <input type="hidden" name="fail_redirect" value="http://facebook.com">
-            <input type="hidden" name="from" value="p.lorencowicz@gmail.com">
-            <input type="submit">
+                <input type="email" name="to" autocomplete="on" placeholder="Podaj email">
+                <input type="hidden" name="subject" value="message">
+                <textarea name="message" placeholder="Wpisz wiadomość"></textarea>
+                <input type="hidden" name="reply_to" value="p.lorencowicz@gmail.com">
+                <input type="hidden" name="redirect" value="http://google.com">
+                <input type="hidden" name="fail_redirect" value="http://facebook.com">
+                <input type="hidden" name="from" value="p.lorencowicz@gmail.com">
+                <input type="submit">
         </form>
+        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
     </div>
 
 
-    <div class="main">
-        <div class="center">
+    <div class="circle">
             <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
             <h3>Pobierz za darmo</h3>
             <p class="icons">
@@ -45,7 +45,6 @@
                 <span class="icon-apple"></span>
                 <span class="icon-windows"></span>
             </p>
-        </div>
     </div>
 
     <div class="scroll">
