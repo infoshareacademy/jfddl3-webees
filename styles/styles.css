@@ -92,13 +92,58 @@ body {
     background: #FFD99B;
 }
 
-
 .top{
     height: 12vh;
     background-color: #132326;
     color: #FFD99B;
     box-shadow: 0 0 50px #132326;
     z-index: 5;
+}
+
+.send{
+    background: transparent;
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    border: 2px solid #88A34F;
+    text-decoration: none;
+    color: #88A34F;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    transition: 1s;
+}
+
+.formular{
+    border: 1px solid black;
+    position: absolute;
+    left: 100%;
+    top: 100%;
+    transform: translate(-100%, -100%);
+    transition: 1s;
+    height:200px;
+    width: 200px;
+}
+
+form{
+    display:none;
+    transition: 1s;
+}
+
+/*.send:hover ~ form{*/
+    /*display: block;*/
+/*}*/
+
+/*.send:hover {*/
+    /*display: none;*/
+/*}*/
+
+.formular:hover > form {
+    display:block;
+}
+
+.formular:hover > a {
+    display:none;
 }
 
 .button{
