@@ -1,21 +1,33 @@
+
 .nav {
 
-    background-color: rgba(255, 217, 155, 0.3);
+
+    background-color: #132326;
     position: fixed;
     width: 100%;
-    top: 0px;
-    left: 0px;
-
-
+    top: 0;
+    left: 0;
 }
+
+
 
 .nav li {
 
+    color: #88A34F;
     display: inline-block;
     list-style: none;
-    margin: auto;
-    padding: 10px;
-    color: #132326;
+    text-align: center;
+    height: 45px;
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #88A34F;
+    border-radius: 30px;
+    line-height: 50px;
+    font-family: "Quicksand";
+    font-weight: 80px;
+    font-size: 20px;
+
 
 }
 
@@ -23,8 +35,29 @@
 
     text-align: center;
 
+
+
 }
 
+.nav li:hover {
+    background: #88A34F;
+    transition: 0.4s ;
+
+}
+
+
+ .nav a:hover {
+
+
+     border-color: #88A34F;
+
+ }
+
+.nav a:hover li{
+
+    color: #132326;
+
+}
 
 
 
