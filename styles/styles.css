@@ -235,6 +235,10 @@ form{
     font-size: 1.2em;
     text-align: center;
     box-shadow: 0 0 20px #132326;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+    flex-direction: column;
 }
 
 .circle h1, .circle h3{
