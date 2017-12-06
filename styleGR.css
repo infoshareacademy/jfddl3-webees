@@ -63,17 +63,18 @@
     margin-top: 30px;
     margin-left: 50px;
     width: 1000px;
-    height:20px;
-    display: inline-flex;
-    justify-content: space-between;
+    height:50px;
+    display: flex;
     background: #ff8990;
 
 }
 
 .social ul li{
-    display: inline-flex;
-    justify-content: space-between;
-    text-underline-style: none;
+
+    display: inline-block;
+    justify-content: center;
+    list-style: none;
+
 }
 
 
