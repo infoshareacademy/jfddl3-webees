@@ -12,33 +12,43 @@
 .content{
     width: 100%;
     display: block;
-    height: 50%;
+    height: 80%;
     background-color: aquamarine;
+}
+
+.together{
+    width: 100%;
+    height:70%;
+    display: flex;
+    justify-content: space-around;
+    background: #ffd99b;
 }
 
 
 .team{
-    width: 100%;
-    display: inline-flex;
-    justify-content: space-around;
-}
-
-.team_1{
-    background: #f2ff68;
+    margin-top: 15px;
+    width: auto%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    color: #333333;
 }
 
-
-.team_2{
-    background: coral;
+.team img{
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
-.team_3 {
-    background: lawngreen;
-}
+.team img:hover { opacity:0.7;
+    filter:alpha(opacity=50); }
 
-.team_4{
-    background: #f2ff68;
+.Image{
+    height: auto;
+    width: 100%;
+    border-radius: 50%;
+
 }
 
 
@@ -50,12 +60,21 @@
 }
 
 .social{
+    margin-top: 30px;
+    margin-left: 50px;
     width: 1000px;
     height:20px;
     display: inline-flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    background: #ff8990;
+
 }
 
-. team{
-     text-align: justify;
+.social ul li{
+    display: inline-flex;
+    justify-content: space-between;
+    text-underline-style: none;
 }
+
+
+
