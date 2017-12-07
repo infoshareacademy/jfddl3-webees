@@ -81,7 +81,7 @@ body {
     background-color: #132326;
     color: #FFD99B;
     box-shadow: 0 0 50px #132326;
-    z-index: 5;
+    z-index: 0;
     position: relative;
 }
 
@@ -122,101 +122,13 @@ body {
 
 /* ***** MAIN ***** */
 
-.formular{
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    position: absolute;
-    left: 97.5%;
-    top: 97.5%;
-    transform: translate(-100%, -100%);
-    transition: 1s;
-}
-
-/* .formular form {
-    background: #132326;
-    width: 12vw;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #c1c1c1;
-    text-align: left;
-    font-size: 0.5em;
-} */
-
 .glyphicon-envelope{
     color: #132326;
     font-size: 2em;
 }
 
-.formular input, textarea{
-    background: transparent;
-    margin: 0.25em;
-    /* padding: 0.7em; */
-    padding: 0;
-    height: 2em;
-    width: 12vw;
-    border-radius: 1em;
-    border: 2px solid #132326;
-    text-decoration: none;
-    color: #88A34F;
-    text-align: center;
-    font-size: 0.7em;
-    line-height: 2em;
-    transition: 1s;
-}
-
-textarea{
-    height:6em;
-    overflow: auto;
-    line-height: 1em;
-}
-
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #88A34F;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    color: #88A34F;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    color: #88A34F;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    color: #88A34F;
-  }
-
-.send{
-    background: transparent;
-    padding: 0;
-    height: 2em;
-    width: 12vw;
-    border-radius: 1em;
-    border: 2px solid #132326;
-    text-decoration: none;
-    color: #132326;
-    text-align: center;
-    font-size: 1em;
-    line-height: 2em;
-    transition: 1s;
-}
-
-form{
-    opacity:0;
-    transition: 1s;
-}
-
-.formular:hover > form {
-    opacity:1;
-}
-
-.send:hover{
-    background: #132326;
-    color: #88A34F;
-}
-
 .main{
-    background-image: linear-gradient(to bottom, transparent, rgba(19,35,38,0.3)) , url("../images/bg.jpg");
+    background-image: url("../images/bg.jpg");
     height: 88vh;
     background-size: cover;
     display: flex;
@@ -225,49 +137,100 @@ form{
 }
 
 .circle{
-    width: 33.333vw;
-    height: 33.333vw;
+    height: 35vw;
+    width: 35vw;
+    min-width: 25em;
+    max-width: 35em;
+    min-height: 25em;
+    max-height:35em;
     margin: 5vw;
     padding: 2em;
     background: rgba(34,71,50,0.25);
     border-radius: 50%;
     color: #132326;
-    font-size: 1.2em;
     text-align: center;
     box-shadow: 0 0 20px #132326;
     display: flex;
-    /*align-items: center;*/
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
-.circle h1, .circle h3{
-    padding: 2rem 0;
+.circle h1{
+    font-size: 2.5em;
 }
 
-.circle h3{
-    animation-iteration-count: infinite;
-    animation-duration: 1s;
-    animation-direction: alternate-reverse;;
+.circle form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.circle span{
-    padding: 0;
-    transition: all 0.3s ease-in-out;
-    border-radius: 2em;
-    display: inline-block;
-    font-size: 1.5em;
+.circle form input{
+    background: #88A34F;
     height: 2em;
-    width: 2em;
+    width: 20vw;
+    border-radius: 1em;
+    border: 2px solid #132326;
+    text-decoration: none;
+    color: #132326;
+    text-align: center;
+    font-size: 1em;
     line-height: 2em;
+    margin: 5px;
 }
 
-.circle span:hover{
-    background: #132326;
-    /*background: #88A34F;*/
-    color: #88A34F;
-    cursor: pointer;
+.circle form input[type="submit"]{
+    width: 12vw;
+    max-width: 20em;
+    min-width: 8em;
+    transition: 1s;
+    padding: 0;
 }
+
+.circle form input[type="email"]{
+    width: 20vw;
+    max-width: 20em;
+    min-width: 8em;
+    transition: 1s;
+}
+
+.circle form input[type="email"]:hover{
+    width: 35vw;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #132326;
+    transition: 0.5s;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #132326;
+    transition: 0.5s;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #132326;
+    transition: 0.5s;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #132326;
+    transition: 0.5s;
+}
+
+input:hover::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: transparent;
+}
+input:focus::-moz-placeholder { /* Firefox 19+ */
+    color: transparent;
+}
+input:focus:-ms-input-placeholder { /* IE 10+ */
+    color: transparent;
+}
+input:focus:-moz-placeholder { /* Firefox 18- */
+    color: transparent;
+}
+
+/* ***** small scrolling mouse icon ***** */
 
 .scroll{
     border: 4px solid #132326;
