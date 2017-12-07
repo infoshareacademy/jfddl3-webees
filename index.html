@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WeBees</title>
+    <title>WeBees Map App</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+
 </head>
+
+
 <body>
-    
+
+<header class="top">
+    <img src="images/leaves.svg" alt="leaves logo" class="left">
+
+    <a href="#" class="button right">Zaloguj</a>
+    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+
+</header>
+
+<main class="main">
+    <div class="formular">
+        <form action="#" method="POST">
+                <input type="email" name="to" autocomplete="on" placeholder="Podaj email">
+                <input type="hidden" name="subject" value="message">
+                <textarea name="message" placeholder="Wpisz wiadomość"></textarea>
+                <input type="hidden" name="reply_to" value="p.lorencowicz@gmail.com">
+                <input type="hidden" name="redirect" value="http://google.com">
+                <input type="hidden" name="fail_redirect" value="http://facebook.com">
+                <input type="hidden" name="from" value="p.lorencowicz@gmail.com">
+                <input type="submit">
+        </form>
+    </div>
+
+
+    <div class="circle">
+            <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
+            <h3>Zapisz się na premierę!</h3>
+        <input type="email" name="email" autocomplete="on" placeholder="Podaj email" required>
+        <input type="submit" value="Zapisz się!">
+    </div>
+
+    <div class="scroll">
+        <div class="wheel"></div>
+    </div>
+
+</main>
+
+
 </body>
 </html>
