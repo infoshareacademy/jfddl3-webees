@@ -20,7 +20,10 @@ img{
 
 }
 
-body{
-    background: #88A34F;
-
+body {
+    font-family: Ubuntu, serif;
+    font-size: 14px;
+    line-height: 2px;
+    color: #132326;
+    background-color:#FFD98B;
 }
