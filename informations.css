@@ -11,7 +11,11 @@ bardzo ciemny:  #132326, rgba(19,35,38,1)
 *******************************************/
 
 
-
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 img{
@@ -23,7 +27,42 @@ img{
 body {
     font-family: Ubuntu, serif;
     font-size: 14px;
-    line-height: 2px;
+    color:#FFD99B ;
+    background-color:#132326;
+
+}
+
+
+.icons{
+    background: transparent;
+    border: 2px solid #88A34F;
+
+
+}
+
+div.icons-list{
+    display: inline-block;
+    border: 5px solid #88A34F;
+    width:15em;
+    height:5em;
+    border-radius:7em;
+    text-align: center;
+    margin-left: 145px;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+
+
+footer {
     color: #132326;
-    background-color:#FFD98B;
+    background-color: #FFD99B;
+    font-family: Ubuntu;
+    text-align: center;
+    padding: 10px 0 15px 0;
+    margin-top:125px;
+}
+
+.right-reserved{
+    display:inline-flex;
 }
