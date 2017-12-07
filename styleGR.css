@@ -22,6 +22,8 @@
     display: flex;
     justify-content: space-around;
     background: #ffd99b;
+
+    perspective:300px; -----
 }
 
 
@@ -41,8 +43,14 @@
     border-radius: 50%;
 }
 
-.team img:hover { opacity:0.7;
-    filter:alpha(opacity=50); }
+.team img:hover{
+    opacity:0.7;
+    filter:alpha(opacity=50);
+    transition:1s;
+    transform:rotateY(180deg);
+
+}
+
 
 .Image{
     height: auto;
