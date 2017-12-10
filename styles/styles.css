@@ -12,60 +12,63 @@ bardzo ciemny:  #132326, rgba(19,35,38,1)
 
 /* ***** FONTS ***** */
 
-  /* latin-ext */
-  @font-face {
+/* latin-ext */
+@font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 400;
     src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v7/s2PXW4WrV3VLrOUpHiqsfYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
     unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
+}
+
+/* latin */
+@font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 400;
     src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v7/sKd0EMYPAh5PYCRKSryvW5Bw1xU1rKptJj_0jans920.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-  }
+}
 
-  /* latin-ext */
-  @font-face {
+/* latin-ext */
+@font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 500;
     src: local('Quicksand Medium'), local('Quicksand-Medium'), url(https://fonts.gstatic.com/s/quicksand/v7/FRGja7LlrG1Mypm0hCq0DojoYw3YTyktCCer_ilOlhE.woff2) format('woff2');
     unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
+}
+
+/* latin */
+@font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 500;
     src: local('Quicksand Medium'), local('Quicksand-Medium'), url(https://fonts.gstatic.com/s/quicksand/v7/FRGja7LlrG1Mypm0hCq0Dhampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-  }
-  /* latin-ext */
-  @font-face {
+}
+
+/* latin-ext */
+@font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 700;
     src: local('Quicksand Bold'), local('Quicksand-Bold'), url(https://fonts.gstatic.com/s/quicksand/v7/32nyIRHyCu6iqEka_hbKsojoYw3YTyktCCer_ilOlhE.woff2) format('woff2');
     unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-  }
+}
 
-  /* latin */
-  @font-face {
+/* latin */
+@font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 700;
     src: local('Quicksand Bold'), local('Quicksand-Bold'), url(https://fonts.gstatic.com/s/quicksand/v7/32nyIRHyCu6iqEka_hbKshampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-  }
+}
 
 /* ***** TOP ***** */
 
-*{
+* {
     margin: 0;
 }
 
@@ -77,45 +80,38 @@ body {
     overflow-x: hidden;
 }
 
-.top{
-    height: 12vh;
+.top {
+    height: 70px;
     background-color: #132326;
     color: #FFD99B;
     box-shadow: 0 0 50px #132326;
-    z-index: 0;
     position: relative;
+    padding: 10px 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.left{
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translate(0%, -50%);
-    height: 3em;
+.logo {
+    height: 50px;
 }
 
-.button{
+.button {
     background: transparent;
-    height: 2em;
-    width: 12vw;
-    border-radius: 1em;
-    border: 2px solid #88A34F;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border: 1px solid #88A34F;
     text-decoration: none;
     color: #88A34F;
     text-align: center;
     font-size: 1em;
-    line-height: 2em;
+    line-height: 40px;
+    margin: 5px 0;
 }
 
-.right{
-    position: absolute;
-    left: 97.5%;
-    top: 50%;
-    transform: translate(-100%, -50%);
-    transition: 0.4s;
-}
-
-.right:hover{
+.right:hover {
     background: #88A34F;
     color: #132326;
     text-decoration: none;
@@ -123,30 +119,23 @@ body {
 
 /* ***** MAIN ***** */
 
-.glyphicon-envelope{
-    color: #132326;
-    font-size: 2em;
-}
-
-.main{
+.main {
     background-image: url("../images/bg.jpg");
-    height: 88vh;
+    height: calc(100vh - 70px);
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.circle{
-    height: 35vw;
-    width: 35vw;
-    min-width: 25em;
-    max-width: 35em;
-    min-height: 25em;
-    max-height:35em;
-    margin: 5vw;
+.circle {
+    width: 50vh;
+    height: 50vh;
+    min-width: 450px;
+    min-height: 450px;
+    margin: 0 50px;
     padding: 2em;
-    background: rgba(34,71,50,0.25);
+    background: rgba(34, 71, 50, 0.25);
     border-radius: 50%;
     color: #132326;
     text-align: center;
@@ -157,18 +146,39 @@ body {
     flex-direction: column;
 }
 
-.circle h1{
-    font-size: 2.5em;
+.circle h1 {
+    font-size: 2.4em;
 }
 
-.circle form{
+@media only screen and (max-width: 500px) {
+    .main{
+        justify-content: center;
+    }
+
+    .circle {
+        height: auto;
+        width: 90vw;
+        min-width: 90vw;
+        max-width: 90vw;
+        padding: 1em;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .circle h1 {
+        font-size: 1.8em;
+    }
+}
+
+
+.circle form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.circle form input{
+.circle form input {
     background: #88A34F;
     height: 2em;
     width: 20vw;
@@ -182,37 +192,40 @@ body {
     margin: 5px;
 }
 
-.circle form input[type="submit"]{
-    width: 12vw;
+.circle form input[type="submit"] {
+    width: 10em;
     max-width: 20em;
     min-width: 8em;
     transition: 1s;
     padding: 0;
 }
 
-.circle form input[type="email"]{
-    width: 20vw;
+.circle form input[type="email"] {
+    width: 10em;
     max-width: 20em;
     min-width: 8em;
     transition: 1s;
 }
 
-.circle form input[type="email"]:hover{
-    width: 35vw;
+.circle form input[type="email"]:hover {
+    width: 15em;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #132326;
     transition: 0.5s;
 }
+
 ::-moz-placeholder { /* Firefox 19+ */
     color: #132326;
     transition: 0.5s;
 }
+
 :-ms-input-placeholder { /* IE 10+ */
     color: #132326;
     transition: 0.5s;
 }
+
 :-moz-placeholder { /* Firefox 18- */
     color: #132326;
     transition: 0.5s;
@@ -221,19 +234,22 @@ body {
 input:hover::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: transparent;
 }
+
 input:focus::-moz-placeholder { /* Firefox 19+ */
     color: transparent;
 }
+
 input:focus:-ms-input-placeholder { /* IE 10+ */
     color: transparent;
 }
+
 input:focus:-moz-placeholder { /* Firefox 18- */
     color: transparent;
 }
 
 /* ***** small scrolling mouse icon ***** */
 
-.scroll{
+.scroll {
     border: 4px solid #132326;
     height: 60px;
     width: 40px;
@@ -248,13 +264,13 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     transform: translate(-50%, -50%);
 }
 
-.scroll:hover{
+.scroll:hover {
     animation-name: shake;
     animation-duration: 0.25s;
     animation-iteration-count: infinite;
 }
 
-.wheel{
+.wheel {
     height: 15px;
     width: 4px;
     border-radius: 2px;
@@ -271,17 +287,39 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 }
 
 @keyframes scroll {
-    0% {top: 30%;}
-    25% {top: 70%;}
-    50% {top: 30%;}
-    100% {top: 30%;}
+    0% {
+        top: 30%;
+    }
+    25% {
+        top: 70%;
+    }
+    50% {
+        top: 30%;
+    }
+    100% {
+        top: 30%;
+    }
 }
 
 @keyframes shake {
-    0% {transform: rotate(0deg) translate(-50%, -50%);}
-    25% {transform: rotate(5deg) translate(-50%, -50%);}
-    50% {transform: rotate(0deg) translate(-50%, -50%);}
-    75% {transform: rotate(-5deg) translate(-50%, -50%);}
-    100% {transform: rotate(0deg) translate(-50%, -50%);}
+    0% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    25% {
+        transform: rotate(5deg) translate(-50%, -50%);
+    }
+    50% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    75% {
+        transform: rotate(-5deg) translate(-50%, -50%);
+    }
+    100% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
 }
 
+@media only screen and (max-width: 500px) {
+    .scroll, .wheel{
+        display: none;
+    }
