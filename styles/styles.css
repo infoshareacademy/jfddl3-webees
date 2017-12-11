@@ -97,7 +97,7 @@ body {
     height: 50px;
 }
 
-.button {
+.top .button {
     background: transparent;
     height: 40px;
     width: 100px;
@@ -109,9 +109,10 @@ body {
     font-size: 1em;
     line-height: 40px;
     margin: 5px 0;
+    transition: 0.5s;
 }
 
-.right:hover {
+.top .button:hover {
     background: #88A34F;
     color: #132326;
     text-decoration: none;
