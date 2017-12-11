@@ -80,7 +80,7 @@ body {
     overflow-x: hidden;
 }
 
-.top {
+#top {
     height: 70px;
     background-color: #132326;
     color: #FFD99B;
@@ -95,9 +95,12 @@ body {
 
 .logo {
     height: 50px;
+    width: 50px;
 }
 
-.top .button {
+#top .button {
+
+    display: block;
     background: transparent;
     height: 40px;
     width: 100px;
@@ -110,9 +113,10 @@ body {
     line-height: 40px;
     margin: 5px 0;
     transition: 0.5s;
+    display: inline-block;
 }
 
-.top .button:hover {
+#top .button:hover {
     background: #88A34F;
     color: #132326;
     text-decoration: none;
