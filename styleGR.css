@@ -1,0 +1,61 @@
+x`
+.container{
+    padding:50px;
+    width: 100%;
+    float: left;
+    display: flex;
+    background-color: red;
+
+}
+
+
+.content{
+    width: 100%;
+    display: block;
+    height: 50%;
+    background-color: aquamarine;
+}
+
+
+.team{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.team_1{
+    background: #f2ff68;
+    display: flex;
+}
+
+
+.team_2{
+    background: coral;
+}
+
+.team_3 {
+    background: lawngreen;
+}
+
+.team_4{
+    background: #f2ff68;
+}
+
+
+.footer {
+    height: 20px;
+    width: 1000px;
+    display: flex;
+
+}
+
+.social{
+    width: 1000px;
+    height:20px;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+. team{
+     text-align: justify;
+}
