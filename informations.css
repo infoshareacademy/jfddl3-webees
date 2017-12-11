@@ -17,6 +17,9 @@ bardzo ciemny:  #132326, rgba(19,35,38,1)
     align-items: center;
 }
 
+.col-xs-4, .col-sm-4, .col-md-4, .col-ld-4{
+    margin-top: 10em;
+}
 
 img{
     width: 100%;
@@ -29,7 +32,7 @@ body {
     font-size: 14px;
     color:#FFD99B ;
     background-color:#132326;
-    margin-top: 10em;
+    /*margin-top: 10em;*/
 
 }
 
