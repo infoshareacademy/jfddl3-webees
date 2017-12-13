@@ -99,8 +99,6 @@ body {
 }
 
 #top .button {
-
-    display: block;
     background: transparent;
     height: 40px;
     width: 100px;
@@ -325,6 +323,26 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 }
 
 @media only screen and (max-width: 500px) {
-    .scroll, .wheel{
+    .scroll, .wheel {
         display: none;
     }
+}
+
+/* *** COOKIES *** */
+
+#cookiesBox{
+    position: fixed;
+    bottom: 0;
+    background-color: #224732;
+    padding: 1em;
+    font-style: italic;
+}
+
+#cookiesBox div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#closeCookies{
+    cursor: pointer;
+}
