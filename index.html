@@ -26,15 +26,14 @@
 </head>
 
 
-
 <body>
 
 <header id="top">
     <img src="images/leaves.svg" alt="leaves logo" class="logo">
     <div>
-    <a href="#" class="button">O nas</a>
-    <a href="#" class="button">Zaplanuj bieg</a>
-    <a href="#" class="button">Funkcje</a>
+        <a href="#" class="button">O nas</a>
+        <a href="#" class="button">Zaplanuj bieg</a>
+        <a href="#" class="button">Funkcje</a>
     </div>
     <a href="#" class="button">Zaloguj</a>
 
@@ -46,7 +45,8 @@
         <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
         <h3>Zapisz się na&nbsp;premierę!</h3>
         <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET">
-            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email" required>
+            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email"
+                   required>
             <input type="submit" value="Zapisz się!">
         </form>
     </div>
@@ -58,6 +58,7 @@
 
 <div class="container-fluid">
     <div class="row">
+
         <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
             <img src="./images/avenue-2215317_1920.jpg " alt="forest">
 
@@ -80,7 +81,35 @@
                 reiciendis repellendus,
                 repudiandae sapiente totam. </p>
 
-            <a href="#" class="right">Więcej</a>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="right" data-toggle="modal" data-target="#myModal1">
+                Więcej
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel1">Rób zdjęcia na trasie</h4>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus enim,
+                                explicabo fugiat laborum nesciunt quasi velit. Culpa cum earum ex maxime
+                                numquam obcaecati pariatur, perferendis perspiciatis quisquam, reprehenderit,
+                                sunt vel?</p>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="right" data-dismiss="modal">Zamknij</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
@@ -95,7 +124,33 @@
                 facilis fugiat fugit, minima modi molestiae neque quasi quos ratione rerum sapiente sed soluta
                 vitae.</p>
 
-            <a href="#" class="right">Więcej</a>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="right" data-toggle="modal" data-target="#myModal2">
+                Więcej
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Jak dobrać pulsometr?</h4>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+                                animi aut cumque delectus, distinctio et eum fugiat hic inventore,
+                                labore magnam nobis, non perspiciatis qui rem sint tempore ullam vel?</p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="right" data-dismiss="modal">Zamknij</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
@@ -114,6 +169,16 @@
     </div>
 
 </footer>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
