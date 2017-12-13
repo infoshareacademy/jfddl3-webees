@@ -1,0 +1,104 @@
+/*******************************************
+
+              NASZA KOLORYSTYKA
+
+czerwony:       #BF352F, rgba(191,53,47,1)
+beżowy:         #FFD99B, rgba(255,217,155,1)
+jasnozielony:   #88A34F, rgba(136,163,79,1)
+ciemnozielony:  #224732, rgba(34,71,50,1)
+bardzo ciemny:  #132326, rgba(19,35,38,1)
+
+*******************************************/
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-xs-4, .col-sm-4, .col-md-4, .col-ld-4{
+    margin-top: 10em;
+}
+
+img{
+    width: 100%;
+    height: auto;
+
+}
+
+body {
+    font-family: Ubuntu, serif;
+    font-size: 14px;
+    color:#FFD99B ;
+    background-color:#132326;
+    /*margin-top: 10em;*/
+
+}
+
+
+p{
+    font-size: 17px;
+
+}
+
+
+.icons{
+    background: transparent;
+    border: 2px solid #88A34F;
+
+
+}
+
+div.icons-list{
+    display: inline-block;
+    border: 5px solid #88A34F;
+    width:15em;
+    border-radius:7em;
+    text-align: center;
+    /*margin-left: 145px;*/
+    margin-top: 35px;
+    font-size: 30px;
+    width: 100%;
+}
+
+div.icons-list i.fa{
+    font-size: 2em;
+    margin: 1em 0.2em;
+}
+
+
+footer {
+    color: #132326;
+    background-color: #FFD99B;
+    font-family: Ubuntu;
+    text-align: center;
+    padding: 10px 0 15px 0;
+    margin-top:125px;
+}
+
+.right-reserved{
+    display:inline-flex;
+}
+
+
+.right{
+    background: transparent;
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    border: 2px solid #88A34F;
+    text-decoration: none;
+    color: #88A34F;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    transition: 0.4s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.right:hover{
+    background: #88A34F;
+    color: #132326;
+}

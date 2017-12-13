@@ -1,48 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WeBees Map App</title>
 
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="nav_style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+
+    <!-- BOOTSTRAP CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!--FONT AWESOME CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--OLA CSS-->
+    <link rel="stylesheet" href="informations.css">
+
 </head>
+
+
+
 <body>
 
+<header id="top">
+    <img src="images/leaves.svg" alt="leaves logo" class="logo">
+    <div>
+    <a href="#" class="button">O nas</a>
+    <a href="#" class="button">Zaplanuj bieg</a>
+    <a href="#" class="button">Funkcje</a>
+    </div>
+    <a href="#" class="button">Zaloguj</a>
 
-<div class="nav">
+</header>
+<main class="main">
+    <div class="formular">
+    </div>
+    <div class="circle">
+        <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
+        <h3>Zapisz się na&nbsp;premierę!</h3>
+        <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET">
+            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email" required>
+            <input type="submit" value="Zapisz się!">
+        </form>
+    </div>
 
-    <div class="nav ul">
-        <ul>
-            <a href="#">
-                <li>O nas</li>
-            </a>
-            <a href="#">
-                <li>Zaplanuj bieg</li>
-            </a>
-            <a href="#">
-                <li>Funkcje</li>
-            </a>
-        </ul>
+    <div class="scroll">
+        <div class="wheel"></div>
+    </div>
+</main>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+            <img src="./images/avenue-2215317_1920.jpg " alt="forest">
+
+            <div class="icons-list">
+                <i class="fa fa-facebook-square"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-twitter"></i>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+            <h1>Wrzucaj zdjęcia z biegów</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem blanditiis eius error
+                exercitationem fuga id, illum in itaque optio placeat quaerat quibusdam quod reiciendis repellendus,
+                repudiandae sapiente totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem
+                blanditiis eius error exercitationem fuga id, illum in itaque optio placeat quaerat quibusdam quod
+                reiciendis repellendus,
+                repudiandae sapiente totam. </p>
+
+            <a href="#" class="right">Więcej</a>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+            <h1>Kompatybilny z pulsometrami</h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos dolores ducimus,
+                eaque earum eos eum eveniet fugit ipsum libero molestiae neque nostrum quam quasi quia
+                recusandae, sed tempore velit! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Alias aliquam autem, molestias nobis officia provident recusandae repellat rerum sed vitae!
+                A dignissimos non qui? A aliquam fugiat modi numquam quisquam.lorem Lorem ipsum dolor sit
+                amet, consectetur adipisicing elit. Adipisci aliquam earum eius eligendi esse ex
+                facilis fugiat fugit, minima modi molestiae neque quasi quos ratione rerum sapiente sed soluta
+                vitae.</p>
+
+            <a href="#" class="right">Więcej</a>
+
+        </div>
+
 
     </div>
 </div>
 
 
+<footer>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+    <div class="container-fluid">
+        <h2>Planowane wydanie aplikacji: Grudzień 2017</h2>
+        <p class="right-reserved">Prawa autorskie: Webees InfoShare Academy
+            Ostatnia aktualizacja strony 6.12.2017r</p>
+
+    </div>
+
+</footer>
+
 </body>
 </html>
