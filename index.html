@@ -9,7 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!--OLA CSS-->
-    <!--<link rel="stylesheet" href="informations.css">-->
+    <link rel="stylesheet" href="informations.css">
 
     <!-- *** OUR STYLES *** -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -23,9 +23,9 @@
 <header id="top">
     <img src="images/leaves.svg" alt="leaves logo" class="logo">
     <div>
-    <a href="#" class="button">O nas</a>
-    <a href="#" class="button">Zaplanuj bieg</a>
-    <a href="#" class="button">Funkcje</a>
+        <a href="#" class="button">O nas</a>
+        <a href="#" class="button">Zaplanuj bieg</a>
+        <a href="#" class="button">Funkcje</a>
     </div>
     <a href="#" class="button">Zaloguj</a>
 
@@ -37,7 +37,8 @@
         <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
         <h3>Zapisz się na&nbsp;premierę!</h3>
         <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET">
-            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email" required>
+            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email"
+                   required>
             <input type="submit" value="Zapisz się!">
         </form>
     </div>
@@ -46,6 +47,12 @@
         <div class="wheel"></div>
     </div>
 </main>
+
+<!-- MOVE TO TOP BUTTON -->
+<div id="moveToTopButton">
+    <span class='glyphicon glyphicon-arrow-up' aria-hidden='true'></span>
+</div>
+<!------------------------>
 
 <div class="container-fluid">
     <div class="row">
@@ -109,7 +116,9 @@
 <!-- *** SCRIPT *** -->
 
 <script>
-    cookies();
+    displayCookies();
+    window.addEventListener('scroll', moveToTopButtonDisplay);
+    moveToTopButton.addEventListener('click', scrollToTop);
 </script>
 
 </body>
