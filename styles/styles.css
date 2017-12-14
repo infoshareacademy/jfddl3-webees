@@ -120,17 +120,29 @@ body {
     line-height: 40px;
     margin: 5px 15px;
     transition: 0.5s;
+    margin-top: 15px;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li.active > a:hover{
-    background: #b92c28;
+    background: #88A34F;
 }
 
 .navbar a > img {
     height: 50px;
-    margin: 0 20px;
+    margin: 0 10px;
+
 }
+
+
+.button.navbar-toggle.collapse:hover {
+
+background-color: #88A34F;
+
+
+
+}
+
 
 #top .button:hover {
     background: #88A34F;
