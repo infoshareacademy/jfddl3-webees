@@ -1,21 +1,13 @@
-var nullVar = null
-var undefinedVar = undefined
-var numberVar = 1
-var boolVar = true
-var stringVar = "ala"
-var arrayVar = [1,2,3]
-var objVar ={a:1, b:2}
+var randomLength = Match.round (Match.random() *10 +1) *4
+var array = []
+
+for (var i = 0; i < randomLength; i++)
+    array [i] = 'Index' + i
 
 
-var types .warn[
-var nullVar,
-var undefinedVar,
-var numberVar,
-var boolVar,
-var stringVar,
-var arrayVar,
-var objVar
-]
+console.log(String(array))
 
+var halfLenght = array.length /2
+var newArray = array.slice(halfLenght -2, halfLenght +2)
 
-console.log(typesArray)
+x`
