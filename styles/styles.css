@@ -331,7 +331,7 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 
 
 
-
+/*************style Ola*******/
 .container{
     display: flex;
     justify-content: center;
@@ -349,11 +349,9 @@ img{
 }
 
 body {
-    font-family: Ubuntu, serif;
     font-size: 14px;
     color:#FFD99B ;
     background-color:#132326;
-    /*margin-top: 10em;*/
 
 }
 
@@ -373,7 +371,6 @@ p{
 
 div.icons-list{
     display: inline-block;
-    border: 5px solid #88A34F;
     width:15em;
     border-radius:7em;
     text-align: center;
@@ -430,5 +427,23 @@ footer {
 
 }
 
-border-top { 5px solid #88a34f;
+.modal-header {
+    padding: 15px;
+    border-bottom: none;
 }
+
+.modal-footer {
+    border-top: none;
+}
+
+i.fa.fa-bicycle, i.fa.fa-map-marker, i.fa.fa-trophy {
+    font-size: 15em;
+    color: #88A34F;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #88A34F;
+    border-radius: 50%;
+
+
+}
+/***********style Ola*********/

@@ -8,7 +8,7 @@ jasnozielony:   #88A34F, rgba(136,163,79,1)
 ciemnozielony:  #224732, rgba(34,71,50,1)
 bardzo ciemny:  #132326, rgba(19,35,38,1)
 
-*******************************************/
+/**************Style Ola*****************************/
 
 
 .container{
@@ -108,3 +108,14 @@ footer {
     color: #FFD99B;
 
 }
+
+.modal-header {
+    padding: 15px;
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/*************StyleOla*********/
