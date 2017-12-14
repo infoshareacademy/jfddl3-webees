@@ -80,6 +80,9 @@ body {
     overflow-x: hidden;
 }
 
+
+
+
 #top {
     height: 70px;
     background-color: #132326;
@@ -93,15 +96,19 @@ body {
     align-items: center;
 }
 
-.logo {
-    height: 50px;
-    width: 50px;
+
+.container-fluid {
+    background-color: #132326 ;
 }
 
-#top .button {
+.navbar-default {
+    border: none;
+}
 
-    display: block;
-    background: transparent;
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>.active>a{
+    padding: 0;
+    background:transparent;
     height: 40px;
     width: 100px;
     border-radius: 20px;
@@ -111,9 +118,18 @@ body {
     text-align: center;
     font-size: 1em;
     line-height: 40px;
-    margin: 5px 0;
+    margin: 5px 15px;
     transition: 0.5s;
-    display: inline-block;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li.active > a:hover{
+    background: #b92c28;
+}
+
+.navbar a > img {
+    height: 50px;
+    margin: 0 20px;
 }
 
 #top .button:hover {
@@ -328,3 +344,4 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     .scroll, .wheel{
         display: none;
     }
+
