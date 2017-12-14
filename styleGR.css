@@ -4,7 +4,6 @@
     width: 100%;
     float: left;
     display: flex;
-    background-color: red;
 
 }
 
@@ -18,11 +17,9 @@
 
 .together{
     width: 100%;
-    height:70%;
+    height:30%;
     display: flex;
     justify-content: space-around;
-    background: #ffd99b;
-
     perspective:300px; -----
 }
 
@@ -30,12 +27,12 @@
 .team{
     margin-top: 15px;
     width: auto%;
-    height: 100%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: space-between;
-    color: #333333;
+
 }
 
 .team img{
