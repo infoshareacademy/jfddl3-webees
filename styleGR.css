@@ -1,32 +1,22 @@
 
-.container{
+.container.team-content{
     justify-content: space-between;
     width: auto;
     display: flex;
+    text-align: center;
 
 }
 
-
-.row img{
+.row.team-row img{
     border-radius: 50%;
     justify-content: center;
 
 }
 
-.row img:hover{
+.row.team-row img:hover{
     opacity:0.7;
     filter:alpha(opacity=50);
     transition:1s;
     transform:rotateY(180deg);
-
 }
-
-
-p{
-    text-align: center;
-    letter-spacing: 2px;
-    margin-top: 20px;
-
-}
-
 
