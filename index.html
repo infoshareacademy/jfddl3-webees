@@ -24,15 +24,15 @@
     <img src="images/leaves.svg" alt="leaves logo" class="logo">
     <div>
         <a href="#" class="button">O nas</a>
-        <a href="#" class="button">Zaplanuj bieg</a>
+        <a href="#" class="button" onclick="scrollToSection(ola)">Zaplanuj bieg</a>
         <a href="#" class="button">Funkcje</a>
     </div>
     <a href="#" class="button">Zaloguj</a>
 
 </header>
 <main class="main">
-    <div class="formular">
-    </div>
+    <!--<div class="formular">-->
+    <!--</div>-->
     <div class="circle">
         <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
         <h3>Zapisz się na&nbsp;premierę!</h3>
@@ -54,7 +54,7 @@
 </div>
 <!------------------------>
 
-<div class="container-fluid">
+<div class="container-fluid" id="ola">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
             <img src="./images/avenue-2215317_1920.jpg " alt="forest">
@@ -118,7 +118,7 @@
 <script>
     displayCookies();
     window.addEventListener('scroll', moveToTopButtonDisplay);
-    moveToTopButton.addEventListener('click', scrollToTop);
+    moveToTopButton.addEventListener('click', scrollToTop());
 </script>
 
 </body>

@@ -27,6 +27,16 @@ function scrollToTop(){
     }, 1)
 }
 
+function scrollToSection(element,x=20){
+    setTimeout(function(){
+        x = window.pageYOffset > element.offsetTop ? x : -x
+        window.scrollTo(0, window.pageYOffset-x)
+        if(Math.abs(window.pageYOffset - element.offsetTop) >= 20)
+            scrollToSection(element)
+        else if(Math.abs(window.pageYOffset - element.offsetTop) > 0)
+            scrollToSection(element, Math.abs(window.pageYOffset - element.offsetTop))
+    }, 1)
+}
 
 // event window on scroll
 // staly czas przeskoku. rozna predkosc przesuwu
