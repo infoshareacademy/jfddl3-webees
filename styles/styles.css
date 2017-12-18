@@ -82,6 +82,7 @@ body {
 
 #top {
     height: 70px;
+    width: 50px;
     background-color: #132326;
     color: #FFD99B;
     box-shadow: 0 0 50px #132326;
@@ -93,27 +94,76 @@ body {
     align-items: center;
 }
 
-.logo {
-    height: 50px;
-    width: 50px;
+.navbar {
+
+    position: fixed;
+    width: 100%;
 }
 
-#top .button {
+.container-fluid {
+    background-color: #132326;
+    padding: 20px;
+}
 
-    display: block;
+.navbar-default {
+    border: none;
+
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > .active > a {
+    padding:10px;
+    margin: 5px 15px;
     background: transparent;
-    height: 40px;
-    width: 100px;
     border-radius: 20px;
     border: 1px solid #88A34F;
     text-decoration: none;
     color: #88A34F;
     text-align: center;
-    font-size: 1em;
-    line-height: 40px;
-    margin: 5px 0;
+    font-size: 20px;
     transition: 0.5s;
-    display: inline-block;
+    align-items: center;
+
+}
+
+.navbar-default
+.navbar-toggle:focus,
+.navbar-default
+.navbar-toggle:hover{
+
+background-color: #132326;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li.active > a:hover {
+    background: #88A34F;
+}
+
+.navbar a > img {
+    height: 50px;
+    margin: 0 10px;
+}
+
+.navbar-default .navbar-toggle:hover {
+
+    background-color: #88A34F;
+    transition: 0.5s;
+
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+
+    background-color: #88A34F;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar {
+    background-color: #132326;
+}
+
+.navbar-default .navbar-toggle {
+
+    border-color: #88A34F;
+
 }
 
 #top .button:hover {
@@ -156,7 +206,7 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-    .main{
+    .main {
         justify-content: center;
     }
 
@@ -174,7 +224,6 @@ body {
         font-size: 1.8em;
     }
 }
-
 
 .circle form {
     display: flex;
@@ -325,6 +374,7 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 }
 
 @media only screen and (max-width: 500px) {
-    .scroll, .wheel{
+    .scroll, .wheel {
         display: none;
     }
+
