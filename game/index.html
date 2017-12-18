@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Game</title>
+    <style>
+
+        body{
+            margin: 0;
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #board{
+            border: 5px solid black;
+            box-shadow: 0 0 20px black;
+            background-color: green;
+            background-image: radial-gradient(circle at center, transparent, rgba(0,0,0,0.5)),repeating-linear-gradient(0deg, darkgreen 0%, darkgreen 1px, transparent 1px, transparent 5%), repeating-linear-gradient(90deg, darkgreen 0%, darkgreen 1px, transparent 1px, transparent 5%);
+            width: 90vh;
+            height: 90vh;
+            max-height: 90vw;
+            min-height: 500px;
+            min-width: 500px;
+            max-width: 90vw;
+            position: relative;
+        }
+
+        .tree{
+            height: 4.5vh;
+            width: 4.5vh;
+            max-height: 4.5vw;
+            min-height: 20px;
+            min-width: 20px;
+            max-width: 4.5vw;
+            background-image: url('img/tree.png');
+            background-size: cover;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+<div id="board"></div>
+
+</body>
+</html>
