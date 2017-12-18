@@ -1,0 +1,92 @@
+body{
+    font-family: Ubuntu, sans-serif;
+    margin: 0;
+    background-color: #444;
+    background-image: radial-gradient(circle at center, transparent, rgba(0,0,0,0.3));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+#board{
+    border: 5px solid black;
+    box-shadow: 0 0 20px black;
+    background-color: green;
+    background-image: radial-gradient(circle at center, transparent, rgba(0,0,0,0.5)),repeating-linear-gradient(0deg, darkgreen 0%, darkgreen 1px, transparent 1px, transparent 5%), repeating-linear-gradient(90deg, darkgreen 0%, darkgreen 1px, transparent 1px, transparent 5%);
+    width: 90vh;
+    height: 90vh;
+    max-height: 90vw;
+    min-height: 500px;
+    min-width: 500px;
+    max-width: 90vw;
+    position: relative;
+}
+
+.tree{
+    background-image: url('img/simple_tree.png');
+}
+
+.owl{
+    background-image: url('img/owl.png');
+}
+
+.diamond{
+    background-image: url('img/diamond.png');
+    border-radius: 50%;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes blink {
+    from {background-color: yellow;}
+    to {background-color: transparent;}
+}
+
+.fox{
+    background-image: url('img/fox.png');
+}
+
+.tree, .owl, .diamond, .fox{
+    height: 4.5vh;
+    width: 4.5vh;
+    max-height: 4.5vw;
+    min-height: 20px;
+    min-width: 20px;
+    max-width: 4.5vw;
+    background-size: cover;
+    position: absolute;
+}
+
+nav{
+    margin: 1em;
+    width: 90vh;
+    min-width: 500px;
+    max-width: 90vw;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.gameBox{
+    box-shadow: 0 0 20px black;
+    color:black;
+    background-color: lightgrey;
+    background-image: linear-gradient(to bottom, transparent 0, transparent 50%, transparent 50%, rgba(0,0,0,0.2) 100%);
+    border-radius: 10px;
+    padding: 0.7em 3em;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid white;
+}
+
+.gameBox:hover{
+    box-shadow: 0 0 20px yellow;
+    border: 1px solid yellow;
+    background-color: lightgrey;
+}
