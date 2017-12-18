@@ -80,10 +80,9 @@ body {
     overflow-x: hidden;
 }
 
-
-
 #top {
     height: 70px;
+    width: 50px;
     background-color: #132326;
     color: #FFD99B;
     box-shadow: 0 0 50px #132326;
@@ -95,45 +94,48 @@ body {
     align-items: center;
 }
 
-/*.navbar{*/
+.navbar {
 
-/*position: fixed;*/
-
-/*}*/
-
-
+    position: fixed;
+    width: 100%;
+}
 
 .container-fluid {
-    background-color: #132326 ;
+    background-color: #132326;
+    padding: 20px;
 }
 
 .navbar-default {
     border: none;
+
 }
 
-.navbar-default .navbar-nav>li>a,
-.navbar-default .navbar-nav>.active>a{
-    padding: 0;
-    background:transparent;
-    height: 40px;
-
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > .active > a {
+    padding:10px;
+    margin: 5px 15px;
+    background: transparent;
     border-radius: 20px;
     border: 1px solid #88A34F;
     text-decoration: none;
     color: #88A34F;
     text-align: center;
-    font-size: 1em;
-    line-height: 40px;
-    margin: 5px 15px;
+    font-size: 20px;
     transition: 0.5s;
-    margin-top: 15px;
     align-items: center;
 
 }
 
+.navbar-default
+.navbar-toggle:focus,
+.navbar-default
+.navbar-toggle:hover{
+
+background-color: #132326;
+}
 
 .navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li.active > a:hover{
+.navbar-default .navbar-nav > li.active > a:hover {
     background: #88A34F;
 }
 
@@ -144,27 +146,23 @@ body {
 
 .navbar-default .navbar-toggle:hover {
 
-
-background-color: #88A34F;
-transition: 0.5s;
+    background-color: #88A34F;
+    transition: 0.5s;
 
 }
 
-.navbar-default .navbar-toggle .icon-bar{
+.navbar-default .navbar-toggle .icon-bar {
 
     background-color: #88A34F;
 }
 
-.navbar-default .navbar-toggle:hover .icon-bar{
+.navbar-default .navbar-toggle:hover .icon-bar {
     background-color: #132326;
 }
 
-
-
-
 .navbar-default .navbar-toggle {
 
-border-color: #88A34F;
+    border-color: #88A34F;
 
 }
 
@@ -208,7 +206,7 @@ border-color: #88A34F;
 }
 
 @media only screen and (max-width: 500px) {
-    .main{
+    .main {
         justify-content: center;
     }
 
@@ -226,7 +224,6 @@ border-color: #88A34F;
         font-size: 1.8em;
     }
 }
-
 
 .circle form {
     display: flex;
@@ -377,7 +374,7 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 }
 
 @media only screen and (max-width: 500px) {
-    .scroll, .wheel{
+    .scroll, .wheel {
         display: none;
     }
 
