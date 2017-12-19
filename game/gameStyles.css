@@ -28,10 +28,12 @@ body{
 
 .tree{
     background-image: url('img/simple_tree.png');
+    transition: 0.2s;
 }
 
 .owl{
     background-image: url('img/owl.png');
+    transition: 0.2s;
 }
 
 .diamond{
@@ -51,6 +53,7 @@ body{
 
 .fox{
     background-image: url('img/fox.png');
+    transition: 0.2s;
 }
 
 .tree, .owl, .diamond, .fox{

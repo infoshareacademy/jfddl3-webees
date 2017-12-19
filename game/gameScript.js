@@ -5,7 +5,9 @@
 
 var start = document.getElementById('start');
 
-start.addEventListener('click', function (event) {
+start.addEventListener('click', init)
+
+function init() {
     treePositions = [];
     for (var i = 0; i < 99; i++) { // trees auto-generator
         window['treeXY' + i] = [Math.floor(Math.random() * 20) * 5, Math.floor(Math.random() * 20) * 5]
@@ -14,7 +16,7 @@ start.addEventListener('click', function (event) {
         function treeAlreadyExist(array, item) {
             for (var j = 0; j < array.length; j++) {
                 if (array[j][0] === item[0] && array[j][1] === item[1]) {
-                    window['treeXY' + i] = [Math.floor(Math.random() * 20) * 5, Math.floor(Math.random() * 20) * 5];
+                    window['treeXY' + i] = [Math.floor(Math.random() * 20) * 5, Math.floor(Math.random() * 20) * 5]; //BUG
                     treeAlreadyExist(treePositions, window['treeXY' + i])
                 }
             }
@@ -32,10 +34,11 @@ start.addEventListener('click', function (event) {
 
     // funkcja draw przyda sie takze do losowania pozycji lisa i diamentow
     function draw() {
-        position = [Math.floor(Math.random()*20)*5, Math.floor(Math.random()*20)*5]
+        var position = [Math.floor(Math.random() * 20) * 5, Math.floor(Math.random() * 20) * 5]
         for (var i = 0; i < treePositions.length; i++)
-            if (position === treePositions[i]) draw()
-        console.log(position)
+            if ((position[0] === treePositions[i][0]) && (position[1] === treePositions[i][1])) {
+                position = draw()
+            }
         return position
     }
 
@@ -101,61 +104,91 @@ start.addEventListener('click', function (event) {
         else if (event.key === 'ArrowLeft') owlLeft()
     })
 
-/************************************************/
+    /************************************************/
 
-   // DIAMONDS
+    // DIAMONDS
     var diamond = document.createElement('div')
     board.appendChild(diamond)
     diamond.classList.add('diamond')
     var diamondPosition = draw()
-    diamond.style.left = diamondPosition[0]+'%'
-    diamond.style.top = diamondPosition[1]+'%'
-    setInterval(function(){
+    diamond.style.left = diamondPosition[0] + '%'
+    diamond.style.top = diamondPosition[1] + '%'
+    setInterval(function () {
         var diamondPosition = draw()
-        diamond.style.left = diamondPosition[0]+'%'
-        diamond.style.top = diamondPosition[1]+'%'
-    },5000)
+        diamond.style.left = diamondPosition[0] + '%'
+        diamond.style.top = diamondPosition[1] + '%'
+    }, 5000)
 
-    //FOX
-    var fox = document.createElement('div')
-    board.appendChild(fox)
-    fox.classList.add('fox')
-    var foxPosition = draw()
-    fox.style.left = foxPosition[0]+'%'
-    fox.style.top = foxPosition[1]+'%'
-    setInterval(function(){
-        var drawfoxMove = [Math.round(Math.random()*2-1)*5, Math.round(Math.random()*2-1)*5]
-        fox.style.left =
-            (+fox.style.left.slice(0,-1) + drawfoxMove[0] > 95 || +fox.style.left.slice(0,-1) + drawfoxMove[0] < 0)?
-                fox.style.left : +fox.style.left.slice(0,-1) + drawfoxMove[0] + '%'
-        fox.style.top =
-            (+fox.style.top.slice(0,-1) + drawfoxMove[1] > 95 || +fox.style.top.slice(0,-1) + drawfoxMove[1] < 0)?
-                fox.style.top : +fox.style.top.slice(0,-1) + drawfoxMove[1] + '%'
-    },250)
+    // FOX CONSTRUCTOR
 
-    var fox2 = document.createElement('div')
-    board.appendChild(fox2)
-    fox2.classList.add('fox')
-    var fox2Position = draw()
-    fox2.style.left = fox2Position[0]+'%'
-    fox2.style.top = fox2Position[1]+'%'
-    setInterval(function(){
-        var drawfox2Move = [Math.round(Math.random()*2-1)*5, Math.round(Math.random()*2-1)*5]
-        fox2.style.left =
-            (+fox2.style.left.slice(0,-1) + drawfox2Move[0] > 95 || +fox2.style.left.slice(0,-1) + drawfox2Move[0] < 0)?
-                fox2.style.left : +fox2.style.left.slice(0,-1) + drawfox2Move[0] + '%'
-        fox2.style.top =
-            (+fox2.style.top.slice(0,-1) + drawfox2Move[1] > 95 || +fox2.style.top.slice(0,-1) + drawfox2Move[1] < 0)?
-                fox2.style.top : +fox2.style.top.slice(0,-1) + drawfox2Move[1] + '%'
-    },250)
+    function Fox(foxNumber) {
+        this.init()
+        this.foxMove()
+    }
 
+    Fox.prototype.init = function(foxNumber) {
+        this.element = document.createElement('div')
+        this.element.classList.add('fox')
+        this.position = draw()
+        this.element.style.left = this.position[0] + '%'
+        this.element.style.top = this.position[1] + '%'
+        board.appendChild(this.element)
+    }
 
+    Fox.prototype.foxMove = function() {
+        var foxMoveRandom = () => {
+            return Math.round(Math.random() * 2 - 1) * 5
+        }
+        var drawFoxMove = () => {
+            var foxMoveXY = [foxMoveRandom(), foxMoveRandom()]
+            for (var i = 0; i < treePositions.length; i++) {
+                console.log(this)
+                if ((+this.element.style.left.slice(0, -1) + foxMoveXY[0] === treePositions[i][0])
+                    &&
+                    (+this.element.style.top.slice(0, -1) + foxMoveXY[1] === treePositions[i][1]))
+                    foxMoveXY = drawFoxMove()
+                return foxMoveXY
+            }
+        }
 
+        return setInterval(() => {
+            var foxPosition = drawFoxMove()
+            console.log(foxPosition)
+            console.log(this.element.style.left, this.element.style.top)
+            this.element.style.left =
+                (
+                    +this.element.style.left.slice(0, -1) + foxPosition[0] > 95
+                    ||
+                    +this.element.style.left.slice(0, -1) + foxPosition[0] < 0
+                ) ?
+                    this.element.style.left
+                    :
+                    (+this.element.style.left.slice(0, -1) + foxPosition[0]) + '%'
+            this.element.style.top =
+                (
+                    +this.element.style.top.slice(0, -1) + foxPosition[1] > 95
+                    ||
+                    +this.element.style.top.slice(0, -1) + foxPosition[1] < 0
+                ) ?
+                    this.element.style.top
+                    :
+                    +this.element.style.top.slice(0, -1) + foxPosition[1] + '%'
+            console.log(this.element.style.left, this.element.style.top)
+        }, 250)
+    }
 
+    // FOX AUTO GENERATOR
+    var fox = new Fox(0)
 
+    setInterval(function () {
+        initialFoxNumber = 1
+        var nextFox = new Fox(initialFoxNumber)
+        initialFoxNumber++
+    }, 10000)
 
+    start.removeEventListener('click', init, false)
+}
 
-})
 
 /************************************************/
 
