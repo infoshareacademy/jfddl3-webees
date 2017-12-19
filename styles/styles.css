@@ -378,11 +378,13 @@ div.icons-list{
     margin-top: 35px;
     font-size: 30px;
     width: 100%;
+    /*text-decoration: none;*/
 }
 
 div.icons-list i.fa{
     font-size: 2em;
     margin: 1em 0.2em;
+    color: #FFD99B;
 }
 
 
@@ -464,5 +466,6 @@ i.fa.fa-bicycle, i.fa.fa-map-marker, i.fa.fa-trophy {
     width:100% ;
     height:100% ;
 }
+
 
 /***********style Ola*********/
