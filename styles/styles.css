@@ -80,34 +80,11 @@ body {
     overflow-x: hidden;
 }
 
-#top {
-    height: 70px;
-    width: 50px;
-    background-color: #132326;
-    color: #FFD99B;
-    box-shadow: 0 0 50px #132326;
-    position: relative;
-    padding: 10px 20px;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar {
-
-    position: fixed;
-    width: 100%;
-}
-
-.container-fluid {
-    background-color: #132326;
-    padding: 20px;
-}
-
+/*NAVBAR*/
 .navbar-default {
     border: none;
-
+    background-color: #132326;
+    padding: 20px;
 }
 
 .navbar-default .navbar-nav > li > a,
@@ -116,7 +93,6 @@ body {
     margin: 5px 15px;
     background: transparent;
     height: 40px;
-    width: 100px;
     border-radius: 20px;
     border: 1px solid #88A34F;
     text-decoration: none;
@@ -125,15 +101,13 @@ body {
     font-size: 20px;
     transition: 0.5s;
     align-items: center;
-
 }
 
 .navbar-default
 .navbar-toggle:focus,
 .navbar-default
 .navbar-toggle:hover{
-
-background-color: #132326;
+    background-color: #132326;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -147,14 +121,11 @@ background-color: #132326;
 }
 
 .navbar-default .navbar-toggle:hover {
-
     background-color: #88A34F;
     transition: 0.5s;
-
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-
     background-color: #88A34F;
 }
 
@@ -163,22 +134,13 @@ background-color: #132326;
 }
 
 .navbar-default .navbar-toggle {
-
     border-color: #88A34F;
-
 }
 
-#top .button:hover {
-    background: #88A34F;
-    color: #132326;
-    text-decoration: none;
-}
-
-/* ***** MAIN ***** */
-
+/*HERO*/
 .main {
     background-image: url("../images/bg.jpg");
-    height: calc(100vh - 70px);
+    height: 100vh;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -226,7 +188,6 @@ background-color: #132326;
         font-size: 1.8em;
     }
 }
-
 
 .circle form {
     display: flex;
@@ -304,8 +265,6 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     color: transparent;
 }
 
-/* ***** small scrolling mouse icon ***** */
-
 .scroll {
     border: 4px solid #132326;
     height: 60px;
@@ -382,48 +341,42 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     }
 }
 
+/*INFO*/
+#info {
+    font-size: 14px;
+    color:#FFD99B ;
+    background-color:#132326;
+    padding-bottom: 70px;
+}
 
-
-
-/*************style Ola*******/
-.container{
+#info .container{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.col-xs-4, .col-sm-4, .col-md-4, .col-ld-4{
+#info .col-xs-4,
+#info .col-sm-4,
+#info .col-md-4,
+#info .col-ld-4{
     margin-top: 10em;
 }
 
-img{
+#info img{
     width: 100%;
     height: auto;
-
 }
 
-body {
-    font-size: 14px;
-    color:#FFD99B ;
-    background-color:#132326;
-
-}
-
-
-p{
+#info p{
     font-size: 17px;
-
 }
 
-
-.icons{
+#info .icons{
     background: transparent;
     border: 2px solid #88A34F;
-
-
 }
 
-div.icons-list{
+#info div.icons-list{
     display: inline-block;
     width:15em;
     border-radius:7em;
@@ -435,28 +388,13 @@ div.icons-list{
     /*text-decoration: none;*/
 }
 
-div.icons-list i.fa{
+#info div.icons-list i.fa{
     font-size: 2em;
     margin: 1em 0.2em;
     color: #FFD99B;
 }
 
-
-footer {
-    color: #132326;
-    background-color: #FFD99B;
-    font-family: Ubuntu;
-    text-align: center;
-    padding: 10px 0 15px 0;
-    margin-top:125px;
-}
-
-.right-reserved{
-    display:inline-flex;
-}
-
-
-.right{
+#info .right{
     background: transparent;
     height: 50px;
     width: 200px;
@@ -472,27 +410,47 @@ footer {
     margin-top: 10px;
 }
 
-.right:hover{
+#info .right:hover{
     background: #88A34F;
     color: #132326;
 }
 
-.modal-content {
+
+#info .h3-headings{
+    color: #FFD99B;
+    font-size:35px;
+    font-weight: bold;
+    line-height: 40px;
+    height: 80px;
+}
+
+#info .full-content{
+    width: 96%;
+    height: 100%;
+}
+#info .full-container{
+    width:100% ;
+    height:100% ;
+}
+
+#info .modal-content {
     background-color: #132326;
     color: #FFD99B;
 
 }
 
-.modal-header {
+#info.modal-header {
     padding: 15px;
     border-bottom: none;
 }
 
-.modal-footer {
+#info .modal-footer {
     border-top: none;
 }
 
-i.fa.fa-bicycle, i.fa.fa-map-marker, i.fa.fa-trophy {
+#info i.fa.fa-bicycle,
+#info i.fa.fa-map-marker,
+#info i.fa.fa-trophy {
     font-size: 15em;
     color: #88A34F;
     width: 1.8em;
@@ -503,23 +461,15 @@ i.fa.fa-bicycle, i.fa.fa-map-marker, i.fa.fa-trophy {
     text-align: center;
 
 }
-.h3-headings{
-    color: #FFD99B;
-    font-size:35px;
-    font-weight: bold;
-    line-height: 40px;
-    height: 80px;
 
+/*FOOTER*/
+footer {
+    color: #132326;
+    background-color: #FFD99B;
+    text-align: center;
+    padding: 10px 0 15px 0;
 }
 
-.full-content{
-    width: 96%;
-    height: 100%;
+footer .right-reserved{
+    display:inline-flex;
 }
-.full-container{
-    width:100% ;
-    height:100% ;
-}
-
-
-/***********style Ola*********/
