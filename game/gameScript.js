@@ -3,7 +3,8 @@
 // draw of fox position at begin
 // draw of diamond positions
 
-var start = document.getElementById('start');
+var start = document.getElementById('start')
+var board = document.getElementById('board')
 
 start.addEventListener('click', init)
 
@@ -32,7 +33,7 @@ function init() {
     }
 
 
-    // funkcja draw przyda sie takze do losowania pozycji lisa i diamentow
+    // draw no tree position
     function draw() {
         var position = [Math.floor(Math.random() * 20) * 5, Math.floor(Math.random() * 20) * 5]
         for (var i = 0; i < treePositions.length; i++)
@@ -52,6 +53,8 @@ function init() {
         return false;
     }
 
+    // OWL CREATION
+
     var owl = document.createElement('div')
     owl.classList.add('owl')
     board.appendChild(owl)
@@ -68,6 +71,7 @@ function init() {
             owl.style.top
             :
             (owlOnTree ? owl.style.top : +owl.style.top.slice(0, -1) - 5 + '%')
+            owlOnFox()
     }
 
     function owlRight() {
@@ -77,6 +81,7 @@ function init() {
             owl.style.left
             :
             (owlOnTree ? owl.style.left : +owl.style.left.slice(0, -1) + 5 + '%')
+            owlOnFox()
     }
 
     function owlDown() {
@@ -86,6 +91,7 @@ function init() {
             owl.style.top
             :
             (owlOnTree ? owl.style.top : +owl.style.top.slice(0, -1) + 5 + '%')
+            owlOnFox()
     }
 
     function owlLeft() {
@@ -95,6 +101,7 @@ function init() {
             owl.style.left
             :
             (owlOnTree ? owl.style.left : +owl.style.left.slice(0, -1) - 5 + '%')
+            owlOnFox()
     }
 
     document.addEventListener('keydown', function (event) {
@@ -106,27 +113,29 @@ function init() {
 
     /************************************************/
 
-    // DIAMONDS
-    var diamond = document.createElement('div')
-    board.appendChild(diamond)
-    diamond.classList.add('diamond')
-    var diamondPosition = draw()
-    diamond.style.left = diamondPosition[0] + '%'
-    diamond.style.top = diamondPosition[1] + '%'
-    setInterval(function () {
-        var diamondPosition = draw()
-        diamond.style.left = diamondPosition[0] + '%'
-        diamond.style.top = diamondPosition[1] + '%'
-    }, 5000)
+    // DIAMOND CONSTRUCTOR
+    
+    function Diamond(){
+        this.init = function(){
+    this.element = document.createElement('div')
+    this.element.classList.add('diamond')
+    this.position = draw()
+    this.element.style.left = this.position[0] + '%'
+    this.element.style.top = this.position[1] + '%'
+    board.appendChild(this.element)}
+
+        this.remove = setTimeout(() => 
+        board.removeChild(this.element)
+    , 5000)}
 
     // FOX CONSTRUCTOR
 
-    function Fox(foxNumber) {
+    function Fox() {
         this.init()
         this.foxMove()
     }
 
-    Fox.prototype.init = function(foxNumber) {
+    Fox.prototype.init = function() {
         this.element = document.createElement('div')
         this.element.classList.add('fox')
         this.position = draw()
@@ -136,56 +145,66 @@ function init() {
     }
 
     Fox.prototype.foxMove = function() {
-        var foxMoveRandom = () => {
+        var foxRandomStep = () => {
             return Math.round(Math.random() * 2 - 1) * 5
         }
         var drawFoxMove = () => {
-            var foxMoveXY = [foxMoveRandom(), foxMoveRandom()]
-            for (var i = 0; i < treePositions.length; i++) {
-                console.log(this)
-                if ((+this.element.style.left.slice(0, -1) + foxMoveXY[0] === treePositions[i][0])
-                    &&
-                    (+this.element.style.top.slice(0, -1) + foxMoveXY[1] === treePositions[i][1]))
-                    foxMoveXY = drawFoxMove()
-                return foxMoveXY
-            }
+            var foxMoveXY = [foxRandomStep(), foxRandomStep()]
+            var foxOnTree = isItemInArray(treePositions, [+this.element.style.left.slice(0, -1)+foxMoveXY[0], +this.element.style.top.slice(0, -1) + foxMoveXY[1]])
+            return foxOnTree ? drawFoxMove() : foxMoveXY
         }
-
         return setInterval(() => {
-            var foxPosition = drawFoxMove()
-            console.log(foxPosition)
-            console.log(this.element.style.left, this.element.style.top)
+            var foxStep = drawFoxMove()
             this.element.style.left =
                 (
-                    +this.element.style.left.slice(0, -1) + foxPosition[0] > 95
+                    +this.element.style.left.slice(0, -1) + foxStep[0] > 95
                     ||
-                    +this.element.style.left.slice(0, -1) + foxPosition[0] < 0
+                    +this.element.style.left.slice(0, -1) + foxStep[0] < 0
                 ) ?
                     this.element.style.left
                     :
-                    (+this.element.style.left.slice(0, -1) + foxPosition[0]) + '%'
+                    +this.element.style.left.slice(0, -1) + foxStep[0] + '%'
             this.element.style.top =
                 (
-                    +this.element.style.top.slice(0, -1) + foxPosition[1] > 95
+                    +this.element.style.top.slice(0, -1) + foxStep[1] > 95
                     ||
-                    +this.element.style.top.slice(0, -1) + foxPosition[1] < 0
+                    +this.element.style.top.slice(0, -1) + foxStep[1] < 0
                 ) ?
                     this.element.style.top
                     :
-                    +this.element.style.top.slice(0, -1) + foxPosition[1] + '%'
-            console.log(this.element.style.left, this.element.style.top)
-        }, 250)
+                    +this.element.style.top.slice(0, -1) + foxStep[1] + '%'
+
+            this.position = [this.element.style.left, this.element.style.top]
+            
+            owlOnFox()
+            
+        }, 700)
     }
 
     // FOX AUTO GENERATOR
-    var fox = new Fox(0)
+    var actualFoxesPositions = []
+    return setInterval(function () {
+        fox = new Fox()
+
+    }, 15000)
+    
 
     setInterval(function () {
-        initialFoxNumber = 1
-        var nextFox = new Fox(initialFoxNumber)
-        initialFoxNumber++
-    }, 10000)
-
+        var nextDiamond = new Diamond()
+        nextDiamond.init()
+        // nextDiamond.remove()
+    }, 5000)
+    
+    function owlOnFox(){
+    for(let i = 0; i<document.getElementsByClassName('fox').length; i++){
+        foxesCounter = document.getElementsByClassName('fox')
+        for(let i=0; i<foxesCounter.length; i++){
+        actualFoxesPositions[i] = [document.getElementsByClassName('fox')[i].style.left,document.getElementsByClassName('fox')[i].style.top]
+        }
+        owlOnFoxCheck = isItemInArray(actualFoxesPositions, [owl.style.left, owl.style.top])
+        board.style.backgroundColor = owlOnFoxCheck ? 'red' : 'green'
+        }}
+    
     start.removeEventListener('click', init, false)
 }
 

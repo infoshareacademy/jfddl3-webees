@@ -43,7 +43,6 @@ body{
     animation-duration: 1s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-
 }
 
 @keyframes blink {
@@ -53,7 +52,7 @@ body{
 
 .fox{
     background-image: url('img/fox.png');
-    transition: 0.2s;
+    transition: 0.7s;
 }
 
 .tree, .owl, .diamond, .fox{
