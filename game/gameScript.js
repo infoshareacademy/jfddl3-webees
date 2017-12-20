@@ -71,7 +71,8 @@ function init() {
             owl.style.top
             :
             (owlOnTree ? owl.style.top : +owl.style.top.slice(0, -1) - 5 + '%')
-            owlOnFox()
+        owlOnFox()
+        owlOnDiamond()
     }
 
     function owlRight() {
@@ -81,7 +82,8 @@ function init() {
             owl.style.left
             :
             (owlOnTree ? owl.style.left : +owl.style.left.slice(0, -1) + 5 + '%')
-            owlOnFox()
+        owlOnFox()
+        owlOnDiamond()
     }
 
     function owlDown() {
@@ -91,7 +93,8 @@ function init() {
             owl.style.top
             :
             (owlOnTree ? owl.style.top : +owl.style.top.slice(0, -1) + 5 + '%')
-            owlOnFox()
+        owlOnFox()
+        owlOnDiamond()
     }
 
     function owlLeft() {
@@ -101,7 +104,8 @@ function init() {
             owl.style.left
             :
             (owlOnTree ? owl.style.left : +owl.style.left.slice(0, -1) - 5 + '%')
-            owlOnFox()
+        owlOnFox()
+        owlOnDiamond()
     }
 
     document.addEventListener('keydown', function (event) {
@@ -114,19 +118,27 @@ function init() {
     /************************************************/
 
     // DIAMOND CONSTRUCTOR
-    
-    function Diamond(){
-        this.init = function(){
-    this.element = document.createElement('div')
-    this.element.classList.add('diamond')
-    this.position = draw()
-    this.element.style.left = this.position[0] + '%'
-    this.element.style.top = this.position[1] + '%'
-    board.appendChild(this.element)}
 
-        this.remove = setTimeout(() => 
-        board.removeChild(this.element)
-    , 5000)}
+    function Diamond() {
+        this.init()
+        this.diamondRemove()
+    }
+
+    Diamond.prototype.init = function () {
+        this.element = document.createElement('div')
+        this.element.classList.add('diamond')
+        this.position = draw()
+        this.element.style.left = this.position[0] + '%'
+        this.element.style.top = this.position[1] + '%'
+        board.appendChild(this.element)
+    }
+
+    Diamond.prototype.diamondRemove = function () {
+        setTimeout(() => {
+            board.removeChild(this.element)
+        }, 4000)
+    }
+
 
     // FOX CONSTRUCTOR
 
@@ -135,7 +147,7 @@ function init() {
         this.foxMove()
     }
 
-    Fox.prototype.init = function() {
+    Fox.prototype.init = function () {
         this.element = document.createElement('div')
         this.element.classList.add('fox')
         this.position = draw()
@@ -144,13 +156,13 @@ function init() {
         board.appendChild(this.element)
     }
 
-    Fox.prototype.foxMove = function() {
+    Fox.prototype.foxMove = function () {
         var foxRandomStep = () => {
             return Math.round(Math.random() * 2 - 1) * 5
         }
         var drawFoxMove = () => {
             var foxMoveXY = [foxRandomStep(), foxRandomStep()]
-            var foxOnTree = isItemInArray(treePositions, [+this.element.style.left.slice(0, -1)+foxMoveXY[0], +this.element.style.top.slice(0, -1) + foxMoveXY[1]])
+            var foxOnTree = isItemInArray(treePositions, [+this.element.style.left.slice(0, -1) + foxMoveXY[0], +this.element.style.top.slice(0, -1) + foxMoveXY[1]])
             return foxOnTree ? drawFoxMove() : foxMoveXY
         }
         return setInterval(() => {
@@ -175,36 +187,44 @@ function init() {
                     +this.element.style.top.slice(0, -1) + foxStep[1] + '%'
 
             this.position = [this.element.style.left, this.element.style.top]
-            
+
             owlOnFox()
-            
+
+
         }, 700)
     }
 
-    // FOX AUTO GENERATOR
-    var actualFoxesPositions = []
-    return setInterval(function () {
-        fox = new Fox()
+// FOX AUTO GENERATE
+    var actualFoxesPositions = [];
+    setInterval(() => fox = new Fox(), 16000);          // new fox after 16 seconds
 
-    }, 15000)
-    
+// DIAMONDS AUTO GENERATE
+    setInterval(() => diamond = new Diamond(), 4000);   // new diamond after 8 seconds
 
-    setInterval(function () {
-        var nextDiamond = new Diamond()
-        nextDiamond.init()
-        // nextDiamond.remove()
-    }, 5000)
-    
-    function owlOnFox(){
-    for(let i = 0; i<document.getElementsByClassName('fox').length; i++){
-        foxesCounter = document.getElementsByClassName('fox')
-        for(let i=0; i<foxesCounter.length; i++){
-        actualFoxesPositions[i] = [document.getElementsByClassName('fox')[i].style.left,document.getElementsByClassName('fox')[i].style.top]
+    function owlOnFox() {
+        for (let i = 0; i < document.getElementsByClassName('fox').length; i++) {
+            foxesCounter = document.getElementsByClassName('fox')
+            for (let i = 0; i < foxesCounter.length; i++) {
+                actualFoxesPositions[i] = [foxesCounter[i].style.left, foxesCounter[i].style.top]
+            }
+            owlOnFoxCheck = isItemInArray(actualFoxesPositions, [owl.style.left, owl.style.top])
+
+            if (owlOnFoxCheck) blinkBoardColor("red")
         }
-        owlOnFoxCheck = isItemInArray(actualFoxesPositions, [owl.style.left, owl.style.top])
-        board.style.backgroundColor = owlOnFoxCheck ? 'red' : 'green'
-        }}
-    
+    }
+
+    function owlOnDiamond() {
+        var actualDiamond = document.getElementsByClassName('diamond')[0]
+        if(actualDiamond !== undefined && (actualDiamond.style.left === owl.style.left) && (actualDiamond.style.top === owl.style.top))
+            blinkBoardColor("blue")
+
+    }
+
+    function blinkBoardColor(setColor = "green"){
+        board.style.backgroundColor = setColor;
+        setTimeout(() => board.style.backgroundColor = "green", 400)
+    }
+
     start.removeEventListener('click', init, false)
 }
 
