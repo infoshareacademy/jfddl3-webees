@@ -9,6 +9,7 @@ var board = document.getElementById('board')
 start.addEventListener('click', init)
 
 function init() {
+    board.removeChild(start);
     treePositions = [];
     for (var i = 0; i < 99; i++) { // trees auto-generator
         window['treeXY' + i] = [Math.floor(Math.random() * 20) * 5, Math.floor(Math.random() * 20) * 5]
@@ -108,12 +109,13 @@ function init() {
         owlOnDiamond()
     }
 
-    document.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', controls)
+    function controls(event) {
         if (event.key === 'ArrowUp') owlUp()
         else if (event.key === 'ArrowRight') owlRight()
         else if (event.key === 'ArrowDown') owlDown()
         else if (event.key === 'ArrowLeft') owlLeft()
-    })
+    }
 
     /************************************************/
 
@@ -209,20 +211,50 @@ function init() {
             }
             owlOnFoxCheck = isItemInArray(actualFoxesPositions, [owl.style.left, owl.style.top])
 
-            if (owlOnFoxCheck) blinkBoardColor("red")
+            if (owlOnFoxCheck) {
+                blinkBoardColor("red")
+                points.lifeDecrease()
+            }
         }
     }
 
+
     function owlOnDiamond() {
         var actualDiamond = document.getElementsByClassName('diamond')[0]
-        if(actualDiamond !== undefined && (actualDiamond.style.left === owl.style.left) && (actualDiamond.style.top === owl.style.top))
+        if (actualDiamond !== undefined && (actualDiamond.style.left === owl.style.left) && (actualDiamond.style.top === owl.style.top)) {
             blinkBoardColor("blue")
-
+            points.diamondsIncrease()
+        }
     }
 
-    function blinkBoardColor(setColor = "green"){
+    function blinkBoardColor(setColor = "green") {
         board.style.backgroundColor = setColor;
-        setTimeout(() => board.style.backgroundColor = "green", 400)
+        setTimeout(() => board.style.backgroundColor = "green", 200)
+    }
+
+
+// GAME COUNTERS : LIFE AND DIAMONDS
+    let points = {
+        life: 3,                                                          // start life count
+        diamonds: 0,                                                      // start diamonds count
+        lifeDecrease: function() {
+            --this.life;
+            if(this.life === 0) {
+                board.style.backgroundColor = "black";
+                board.appendChild(start)
+                start.innerHTML = "GAME&nbsp;OVER"
+                document.removeEventListener('keydown', controls, false)}    // GAME OVER !!!!
+            let lifeIcons = document.querySelectorAll('.owlIcon');
+            owls.removeChild(lifeIcons[lifeIcons.length - 1])
+        },
+        diamondsIncrease: function() {
+            ++this.diamonds;
+            let pointIcon = document.createElement('img');
+            pointIcon.setAttribute('src', 'img/diamond.png');
+            pointIcon.style.width = '0.5em';
+            score.appendChild(pointIcon)
+            scoreText.innerText = this.diamonds;
+        },
     }
 
     start.removeEventListener('click', init, false)
