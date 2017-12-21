@@ -195,13 +195,14 @@ function init() {
 
         }, 700)
     }
+    // todo
 
 // FOX AUTO GENERATE
     var actualFoxesPositions = [];
-    setInterval(() => fox = new Fox(), 16000);          // new fox after 16 seconds
+    setInterval(() => new Fox(), 2000);          // new fox after 16 seconds
 
 // DIAMONDS AUTO GENERATE
-    setInterval(() => diamond = new Diamond(), 4000);   // new diamond after 8 seconds
+    setInterval(() => new Diamond(), 5000);   // new diamond after 8 seconds
 
     function owlOnFox() {
         for (let i = 0; i < document.getElementsByClassName('fox').length; i++) {
