@@ -346,7 +346,7 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     font-size: 14px;
     color:#FFD99B ;
     background-color:#132326;
-    padding-bottom: 70px;
+    padding-bottom: 12em;
 }
 
 #info .container{
@@ -490,13 +490,15 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     font-size: 2em;
 }
 .container.team-content .fa.fa-linkedin-square{
-    font-size: 2em;
+    font-size: 3em;
+    color: #FFD99B;
 }
 
 .name{
     color: #FFD99B;
     font-weight: bold;F
 }
+
 
 /*FOOTER*/
 footer {
