@@ -1,15 +1,46 @@
-// NEEDED :
-// draw of owl position at begin
-// draw of fox position at begin
-// draw of diamond positions
-
-var start = document.getElementById('start')
-var board = document.getElementById('board')
-
+let description = document.createElement('div')
+let start = document.createElement('div')
+description.className = 'description'
+start.className = 'start'
+description.innerHTML = '<h1>Dziękujemy za rejestrację</h1> <h2>Pora na pierwszy trening!</h2> <p>Jesteś sową. Lisy wiedzą, ze masz problem z lataniem i chcą Cię upolować na kolację. Stado lisów wciąż się powiększa!</p><p>Uciekaj przed lisami zbierając diamenty. Masz trzy życia. Możesz poruszać się strzałkami w 4 kierunkach, lisy natomiast biegają aż w 8 kierunkach!</p><p>W lewym górnym rogu widzisz ilość zebranych diamentów, w prawym - ilość żyć.</p><h2>Powodzenia!</h2>'
+start.innerText = 'Start'
+document.body.appendChild(description)
+description.appendChild(start)
 start.addEventListener('click', init)
 
 function init() {
-    board.removeChild(start);
+    nav = document.createElement('nav')
+    document.body.appendChild(nav)
+    divCont = document.createElement('div')
+    nav.appendChild(divCont)
+    diamondIconCont = document.createElement('div')
+    scoreCont = document.createElement('div')
+    scoreText = document.createElement('span')
+    diamondIconCont.className = 'diamondIcon'
+    scoreCont.setAttribute('id', 'score')
+    scoreText.setAttribute('id', 'scoreText')
+    // scoreText.innerText = '0'
+    divCont.appendChild(diamondIconCont)
+    divCont.appendChild(scoreCont)
+    scoreCont.appendChild(scoreText)
+    owlsCont = document.createElement('div')
+    owlsCont.setAttribute('id', 'owls')
+    nav.appendChild(owlsCont)
+    owlIcon1 = document.createElement('div')
+    owlIcon2 = document.createElement('div')
+    owlIcon3 = document.createElement('div')
+    owlIcon1.className = 'owlIcon'
+    owlIcon2.className = 'owlIcon'
+    owlIcon3.className = 'owlIcon'
+    owlsCont.appendChild(owlIcon1)
+    owlsCont.appendChild(owlIcon2)
+    owlsCont.appendChild(owlIcon3)
+
+    description.remove()
+    start.remove()
+    let board = document.createElement('div')
+    board.className = 'board'
+    document.body.appendChild(board)
     treePositions = [];
     for (var i = 0; i < 99; i++) { // trees auto-generator
         window['treeXY' + i] = [Math.floor(Math.random() * 20) * 5, Math.floor(Math.random() * 20) * 5]
@@ -137,12 +168,12 @@ function init() {
 
     Diamond.prototype.diamondRemove = function () {
         setTimeout(() => {
-            board.removeChild(this.element)
-        }, 4000)
+            this.element.remove()
+        }, 6000)
     }
 
-
-    // FOX CONSTRUCTOR
+    setInterval(() => new Fox(), 6000)
+    setInterval(() => new Diamond(), 6000)
 
     function Fox() {
         this.init()
@@ -191,20 +222,11 @@ function init() {
             this.position = [this.element.style.left, this.element.style.top]
 
             owlOnFox()
-
-
         }, 700)
     }
-    // todo
-
-// FOX AUTO GENERATE
-    var actualFoxesPositions = [];
-    setInterval(() => new Fox(), 2000);          // new fox after 16 seconds
-
-// DIAMONDS AUTO GENERATE
-    setInterval(() => new Diamond(), 5000);   // new diamond after 8 seconds
 
     function owlOnFox() {
+        var actualFoxesPositions = []
         for (let i = 0; i < document.getElementsByClassName('fox').length; i++) {
             foxesCounter = document.getElementsByClassName('fox')
             for (let i = 0; i < foxesCounter.length; i++) {
@@ -212,19 +234,19 @@ function init() {
             }
             owlOnFoxCheck = isItemInArray(actualFoxesPositions, [owl.style.left, owl.style.top])
 
-            if (owlOnFoxCheck) {
+            if (owlOnFoxCheck && !points.immortal) {
                 blinkBoardColor("red")
-                points.lifeDecrease()
+                lifeDecrease()
             }
         }
     }
-
 
     function owlOnDiamond() {
         var actualDiamond = document.getElementsByClassName('diamond')[0]
         if (actualDiamond !== undefined && (actualDiamond.style.left === owl.style.left) && (actualDiamond.style.top === owl.style.top)) {
             blinkBoardColor("blue")
-            points.diamondsIncrease()
+            diamondsIncrease()
+            // change diamond position after score ???
         }
     }
 
@@ -233,34 +255,53 @@ function init() {
         setTimeout(() => board.style.backgroundColor = "green", 200)
     }
 
-
-// GAME COUNTERS : LIFE AND DIAMONDS
     let points = {
-        life: 3,                                                          // start life count
-        diamonds: 0,                                                      // start diamonds count
-        lifeDecrease: function() {
-            --this.life;
-            if(this.life === 0) {
-                board.style.backgroundColor = "black";
-                board.appendChild(start)
-                start.innerHTML = "GAME&nbsp;OVER"
-                document.removeEventListener('keydown', controls, false)}    // GAME OVER !!!!
-            let lifeIcons = document.querySelectorAll('.owlIcon');
-            owls.removeChild(lifeIcons[lifeIcons.length - 1])
-        },
-        diamondsIncrease: function() {
-            ++this.diamonds;
-            let pointIcon = document.createElement('img');
-            pointIcon.setAttribute('src', 'img/diamond.png');
-            pointIcon.style.width = '0.5em';
-            score.appendChild(pointIcon)
-            scoreText.innerText = this.diamonds;
-        },
+        immortal: false,
+        life: 3,
+        diamonds: 0
+    }
+
+    function lifeDecrease() {
+        if (points.life > 0) {
+            --points.life
+            if (points.life > 0) {
+                let lifeIcons = document.getElementsByClassName('owlIcon')
+                owls.removeChild(lifeIcons[lifeIcons.length - 1]);
+                (function () { points.immortal = true })()
+                setTimeout(() => { points.immortal = false }, 1000)
+            }
+            else if (points.life === 0) {
+                setTimeout(function () {
+                    board.remove()
+                    nav.remove()
+                    document.removeEventListener('keydown', controls, false)
+                    document.body.appendChild(description)
+                    let highScore = localStorage.getItem('highScore') || 0
+                    let highScoreAlert = ''
+                    if (points.diamonds > highScore) {
+                        localStorage.setItem('highScore', points.diamonds)
+                        highScoreAlert = '<h3>Gratulacje! To twój najlepszy wynik!</h3>'
+                    }
+                    description.innerHTML = "<h1>ZOSTAŁEŚ UPOLOWANY</h1><h3>Zebrane diamenty: " + points.diamonds + "</h3>" + highScoreAlert
+                    description.appendChild(start)
+                    start.innerText = 'Zagraj jeszcze raz'
+                    start.addEventListener('click', init)
+                    let returnButton = document.createElement('div')
+                    description.appendChild(returnButton)
+                    returnButton.innerText = 'Powrót do WEBEES'
+                    returnButton.className = 'start'
+                    returnButton.addEventListener('click', function () { window.location.href = '../index.html' })
+                }, 200)
+            }
+        }
+    }
+
+    function diamondsIncrease() {
+        ++points.diamonds;
+        scoreText.innerText = points.diamonds;
+        let diamond = document.getElementsByClassName('diamond')[0]
+        diamond.remove()
     }
 
     start.removeEventListener('click', init, false)
 }
-
-
-/************************************************/
-

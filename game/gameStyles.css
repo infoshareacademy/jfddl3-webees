@@ -1,7 +1,31 @@
+/*******************************************
+czerwony:       #BF352F, rgba(191,53,47,1)
+beżowy:         #FFD99B, rgba(255,217,155,1)
+jasnozielony:   #88A34F, rgba(136,163,79,1)
+ciemnozielony:  #224732, rgba(34,71,50,1)
+bardzo ciemny:  #132326, rgba(19,35,38,1)
+******************************************/
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v7/s2PXW4WrV3VLrOUpHiqsfYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v7/sKd0EMYPAh5PYCRKSryvW5Bw1xU1rKptJj_0jans920.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
 body{
-    font-family: Ubuntu, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
-    background-color: #444;
+    background-color: #132326;
     background-image: radial-gradient(circle at center, transparent, rgba(0,0,0,0.3));
     display: flex;
     flex-direction: column;
@@ -11,11 +35,11 @@ body{
     width: 100vw;
 }
 
-#board{
+.board{
     border: 5px solid black;
     box-shadow: 0 0 20px black;
     background-color: green;
-    background-image: radial-gradient(circle at center, transparent, rgba(0,0,0,0.5)),repeating-linear-gradient(0deg, darkgreen 0%, darkgreen 1px, transparent 1px, transparent 5%), repeating-linear-gradient(90deg, darkgreen 0%, darkgreen 1px, transparent 1px, transparent 5%);
+    background-image: radial-gradient(circle at center, transparent, rgba(0,0,0,0.5)),repeating-linear-gradient(0deg, #224732 0%, #224732 1px, transparent 1px, transparent 5%), repeating-linear-gradient(90deg, #224732 0%, #224732 1px, transparent 1px, transparent 5%);
     width: 90vh;
     height: 90vh;
     max-height: 90vw;
@@ -23,7 +47,6 @@ body{
     min-width: 500px;
     max-width: 90vw;
     position: relative;
-    transition: 0.1s;
 }
 
 .tree{
@@ -62,7 +85,8 @@ body{
     min-height: 20px;
     min-width: 20px;
     max-width: 4.5vw;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
 }
 
@@ -90,8 +114,17 @@ body{
 
 #score{
     display: inline-block;
-    font-size: 2em;
-    color: yellow;
+    font-size: 2.5em;
+    font-family: monospace;
+    animation-name: blink2;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink2 {
+    from {color: yellow;}
+    to {color: orange;}
 }
 
 nav{
@@ -104,26 +137,42 @@ nav{
     align-items: center;
 }
 
-#start{
-    box-shadow: 0 0 30px black;
-    color: green;
-    background-color: rgba(0,0,0,0.5);
-    background-image: linear-gradient(to bottom, transparent 0, transparent 50%, transparent 50%, rgba(0,0,0,0.4) 100%);
-    border-radius: 1.5vh;
-    padding: 0.7em 3em;
+.description{
+    box-shadow: 0 0 30px #88A34F;
+    color: #88A34F;
+    background-color: #132326;
+    border-radius: 1em;
+    border: 1px solid black;
+    padding: 2em 2em 2em 2em;
     cursor: pointer;
     border: 1px solid transparent;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2em;
     transition: 0.4s;
     z-index: 10;
 }
 
-#start:hover{
-    color: yellow;
-    box-shadow: 0 0 30px yellow;
-    border: 1px solid yellow;
+.description h1{
+    margin: 0;
+}
+
+.start{
+    text-align: center;
+    color: #88A34F;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 0.5em;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: 1px solid #88A34F;
+    transition: 0.5s;
+    z-index: 10;
+    margin: 0.5em;
+}
+
+.start:hover{
+    color: #132326;
+    background-color: #88A34F;
 }
