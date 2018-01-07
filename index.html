@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,111 +16,106 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="js/script.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
+
 </head>
 
 
 <body>
+    <div id="fullpage">
+        <header id="top">
+            <img src="images/leaves.svg" alt="leaves logo" class="logo">
+            <div>
+                <a href="#" class="button">O nas</a>
+                <a href="#" class="button" onclick="scrollToSection(ola)">Zaplanuj bieg</a>
+                <a href="#" class="button">Funkcje</a>
+            </div>
+            <a href="#" class="button">Zaloguj</a>
 
-<header id="top">
-    <img src="images/leaves.svg" alt="leaves logo" class="logo">
-    <div>
-        <a href="#" class="button">O nas</a>
-        <a href="#" class="button" onclick="scrollToSection(ola)">Zaplanuj bieg</a>
-        <a href="#" class="button">Funkcje</a>
-    </div>
-    <a href="#" class="button">Zaloguj</a>
+        </header>
+        <main class="main section">
+            <div class="circle">
+                <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
+                <h3>Zapisz się na&nbsp;premierę!</h3>
+                <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET">
+                    <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email" required>
+                    <input type="submit" value="Zapisz się!">
+                </form>
+            </div>
 
-</header>
-<main class="main">
-    <!--<div class="formular">-->
-    <!--</div>-->
-    <div class="circle">
-        <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
-        <h3>Zapisz się na&nbsp;premierę!</h3>
-        <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET">
-            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email"
-                   required>
-            <input type="submit" value="Zapisz się!">
-        </form>
-    </div>
+            <div class="scroll">
+                <div class="wheel"></div>
+            </div>
+        </main>
 
-    <div class="scroll">
-        <div class="wheel"></div>
-    </div>
-</main>
+        <!-- MOVE TO TOP BUTTON -->
+        <div id="moveToTopButton">
+            <span class='glyphicon glyphicon-arrow-up' aria-hidden='true'></span>
+        </div>
+        <!------------------------>
 
-<!-- MOVE TO TOP BUTTON -->
-<div id="moveToTopButton">
-    <span class='glyphicon glyphicon-arrow-up' aria-hidden='true'></span>
-</div>
-<!------------------------>
+        <div class="container-fluid section" id="ola">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+                    <img src="./images/avenue-2215317_1920.jpg " alt="forest">
 
-<div class="container-fluid" id="ola">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
-            <img src="./images/avenue-2215317_1920.jpg " alt="forest">
+                    <div class="icons-list">
+                        <i class="fa fa-facebook-square"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
 
-            <div class="icons-list">
-                <i class="fa fa-facebook-square"></i>
-                <i class="fa fa-instagram"></i>
-                <i class="fa fa-twitter"></i>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+                    <h1>Wrzucaj zdjęcia z biegów</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem blanditiis eius error exercitationem
+                        fuga id, illum in itaque optio placeat quaerat quibusdam quod reiciendis repellendus, repudiandae
+                        sapiente totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem blanditiis
+                        eius error exercitationem fuga id, illum in itaque optio placeat quaerat quibusdam quod reiciendis
+                        repellendus, repudiandae sapiente totam. </p>
+
+                    <a href="#" class="right">Więcej</a>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+                    <h1>Kompatybilny z pulsometrami</h1>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos dolores ducimus, eaque earum
+                        eos eum eveniet fugit ipsum libero molestiae neque nostrum quam quasi quia recusandae, sed tempore
+                        velit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam autem, molestias nobis
+                        officia provident recusandae repellat rerum sed vitae! A dignissimos non qui? A aliquam fugiat modi
+                        numquam quisquam.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam
+                        earum eius eligendi esse ex facilis fugiat fugit, minima modi molestiae neque quasi quos ratione
+                        rerum sapiente sed soluta vitae.
+                    </p>
+
+                    <a href="#" class="right">Więcej</a>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <footer>
+
+            <div class="container-fluid">
+                <h2>Planowane wydanie aplikacji: Grudzień 2017</h2>
+                <p class="right-reserved">Prawa autorskie: Webees InfoShare Academy Ostatnia aktualizacja strony 6.12.2017r</p>
 
             </div>
 
-
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
-            <h1>Wrzucaj zdjęcia z biegów</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem blanditiis eius error
-                exercitationem fuga id, illum in itaque optio placeat quaerat quibusdam quod reiciendis repellendus,
-                repudiandae sapiente totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem
-                blanditiis eius error exercitationem fuga id, illum in itaque optio placeat quaerat quibusdam quod
-                reiciendis repellendus,
-                repudiandae sapiente totam. </p>
-
-            <a href="#" class="right">Więcej</a>
-
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
-            <h1>Kompatybilny z pulsometrami</h1>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos dolores ducimus,
-                eaque earum eos eum eveniet fugit ipsum libero molestiae neque nostrum quam quasi quia
-                recusandae, sed tempore velit! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Alias aliquam autem, molestias nobis officia provident recusandae repellat rerum sed vitae!
-                A dignissimos non qui? A aliquam fugiat modi numquam quisquam.lorem Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit. Adipisci aliquam earum eius eligendi esse ex
-                facilis fugiat fugit, minima modi molestiae neque quasi quos ratione rerum sapiente sed soluta
-                vitae.</p>
-
-            <a href="#" class="right">Więcej</a>
-
-        </div>
-
-
-    </div>
-</div>
-
-
-<footer>
-
-    <div class="container-fluid">
-        <h2>Planowane wydanie aplikacji: Grudzień 2017</h2>
-        <p class="right-reserved">Prawa autorskie: Webees InfoShare Academy
-            Ostatnia aktualizacja strony 6.12.2017r</p>
-
+        </footer>
     </div>
 
-</footer>
-
-<!-- *** SCRIPT *** -->
-
-<script>
-    displayCookies();
-    window.addEventListener('scroll', moveToTopButtonDisplay);
-    moveToTopButton.addEventListener('click', scrollToTop());
-</script>
-
+    <script>
+        displayCookies();
+        window.addEventListener('scroll', moveToTopButtonDisplay);
+        moveToTopButton.addEventListener('click', scrollToTop());
+    </script>
 </body>
+
 </html>

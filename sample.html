@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.css">
+    <script>
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
+            });
+        });
+    </script>
+    <style>
+        body ul{
+        position:fixed;
+        top: 0;
+        z-index: 2;
+    }
+    body ul li{
+        display: inline-block;
+        margin: 5px;
+        color: black;
+        background-color: white;
+        font-family: monospace;
+        font-size: 1.2em;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="myMenu">
+        <li data-menuanchor="firstPage" class="active">
+            <a href="#firstPage">First section</a>
+        </li>
+        <li data-menuanchor="secondPage">
+            <a href="#secondPage">Second section</a>
+        </li>
+        <li data-menuanchor="thirdPage">
+            <a href="#thirdPage">Third section</a>
+        </li>
+        <li data-menuanchor="fourthPage">
+            <a href="#fourthPage">Fourth section</a>
+        </li>
+    </ul>
+
+    <div id="fullpage">
+        <div class="section" style="background-color: blue;">whatever</div>
+        <div class="section" style="background-color: green;">whatever</div>
+        <div class="section" style="background-color: orange;">whatever</div>
+        <div class="section" style="background-color: yellow;">whatever</div>
+    </div>
+</body>
+
+</html>
