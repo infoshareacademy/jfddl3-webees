@@ -140,7 +140,7 @@ body {
 /*HERO*/
 .main {
     background-image: url("../images/bg.jpg");
-    height: 100vh;
+    background-position-y: 90px;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -166,7 +166,7 @@ body {
 }
 
 .circle h1 {
-    font-size: 2.4em;
+    font-size: 2em;
 }
 
 @media only screen and (max-width: 500px) {
@@ -341,22 +341,19 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     }
 }
 
-/*INFO*/
-.full-content{
-    margin-top: 10%;
-}
-h2{
-    /*font-size: 45px;*/
+
+#info h2{
+    font-size: 45px;
     color: #FFD99B;
     font-weight: bold;
     text-align: center;
     margin-top: 0;
 }
+
 #info {
     font-size: 14px;
     color:#FFD99B ;
     background-color:#132326;
-
 }
 
 #info .container{
@@ -365,16 +362,10 @@ h2{
     align-items: center;
 }
 
-#info .col-xs-4,
-#info .col-sm-4,
-#info .col-md-4,
-#info .col-ld-4{
-    margin-top: 10em;
-}
-
 #info img{
     width: 100%;
     height: auto;
+    margin-top: 20px;
 }
 
 #info p{
@@ -469,36 +460,38 @@ h2{
     border-radius: 50%;
     line-height: 2em;
     text-align: center;
-
 }
-
-
 
 .container.team-content{
-    justify-content: space-between;
     width: auto;
     height: 1000px;
-    display: flex;
     text-align: center;
-
+    position: relative;
 }
+
 .row.team-row img{
     border-radius: 50%;
     transition:3.5s;
     max-width: 100%;
     height: auto;
     padding: 50px;
+    display: flex;
+    justify-content: space-between;
 }
+
 .row.team-row img.animate{
     filter:alpha(opacity=50);
     transform:rotateY(360deg);
 }
+
 .row.team-row{
     max-width: auto;
 }
+
 .container.team-content .fa.fa-facebook-square{
     font-size: 2em;
 }
+
 .container.team-content .fa.fa-linkedin-square{
     font-size: 3em;
     color: #FFD99B;
@@ -508,21 +501,22 @@ h2{
     color: #FFD99B;
     font-weight: bold;
 }
+
 #team{
     margin-top: 5%;
 }
 
-/*FOOTER*/
-footer {
+.footer {
     color: #132326;
+    min-height: 180px;
+    width: 100%;
     background-color: #FFD99B;
     text-align: center;
-    margin-bottom: 0px;
-    /*padding: 10px 0 15px 0;*/
+    position: absolute;
+    top: 100vh;
+    transform: translate(0, -100%);
 }
+
 .foot{
     color:#132326;
 }
-/*footer .right-reserved{*/
-    /*display:inline;*/
-/*}*/
