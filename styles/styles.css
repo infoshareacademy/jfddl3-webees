@@ -140,7 +140,7 @@ body {
 /*HERO*/
 .main {
     background-image: url("../images/bg.jpg");
-    height: 100vh;
+    background-position-y: 90px;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -166,7 +166,7 @@ body {
 }
 
 .circle h1 {
-    font-size: 2.4em;
+    font-size: 2em;
 }
 
 @media only screen and (max-width: 500px) {
@@ -341,11 +341,7 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     }
 }
 
-/*INFO*/
-.full-content{
-    margin-top: 10%;
-}
-h2{
+#info h2{
     font-size: 45px;
     color: #FFD99B;
     font-weight: bold;
@@ -355,7 +351,7 @@ h2{
     font-size: 14px;
     color:#FFD99B ;
     background-color:#132326;
-    padding-bottom: 12em;
+    /* padding-bottom: 12em; */
 }
 
 #info .container{
@@ -364,16 +360,18 @@ h2{
     align-items: center;
 }
 
-#info .col-xs-4,
+/* #info .col-xs-4,
 #info .col-sm-4,
 #info .col-md-4,
 #info .col-ld-4{
     margin-top: 10em;
-}
+} */
 
 #info img{
     width: 100%;
     height: auto;
+    margin-top: 20px;
+
 }
 
 #info p{
@@ -471,22 +469,21 @@ h2{
 
 }
 
-
-
 .container.team-content{
-    justify-content: space-between;
     width: auto;
     height: 1000px;
-    display: flex;
     text-align: center;
-
+    position: relative;
 }
+
 .row.team-row img{
     border-radius: 50%;
     transition:3.5s;
     max-width: 100%;
     height: auto;
     padding: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 .row.team-row img.animate{
     filter:alpha(opacity=50);
@@ -508,15 +505,14 @@ h2{
     font-weight: bold;F
 }
 
-
 /*FOOTER*/
-footer {
+.footer {
     color: #132326;
+    min-height: 180px;
+    width: 100%;
     background-color: #FFD99B;
     text-align: center;
-    padding: 10px 0 15px 0;
-}
-
-footer .right-reserved{
-    display:inline-flex;
+    position: absolute;
+    top: 100vh;
+    transform: translate(0, -100%);
 }
