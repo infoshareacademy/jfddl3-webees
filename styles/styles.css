@@ -342,6 +342,15 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 }
 
 /*INFO*/
+.full-content{
+    margin-top: 10%;
+}
+h2{
+    font-size: 45px;
+    color: #FFD99B;
+    font-weight: bold;
+    text-align: center;
+}
 #info {
     font-size: 14px;
     color:#FFD99B ;
