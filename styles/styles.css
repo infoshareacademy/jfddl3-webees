@@ -81,6 +81,16 @@ body {
 }
 
 /*NAVBAR*/
+.navbar-default .navbar-nav>li>a{
+    color: #88A34F;
+}
+.navbar-default,
+.navbar-nav > li > a:focus,
+.navbar-default,
+.navbar-nav > li > a:hover {
+    color: #88A34F;
+}
+
 .navbar-default {
     border: none;
     background-color: #132326;
@@ -113,6 +123,40 @@ body {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li.active > a:hover {
     background: #88A34F;
+    color: #132326;
+}
+#zaplanuj {
+    color:#88A34F;
+}
+#zaplanuj:hover{
+    color: #132326;
+}
+#funkcje {
+    color:#88A34F;
+}
+#funkcje:hover{
+    color: #132326;
+}
+#zaloguj {
+    color:#88A34F;
+}
+#zaloguj:hover{
+    color: #132326;
+}
+#zespol{
+    color: #88A34F;
+}
+#zespol:hover{
+    color: #132326;
+}
+.navbar-default
+.navbar-nav>.active>a,
+.navbar-default
+.navbar-nav>.active>a:focus,
+.navbar-default
+.navbar-nav>.active>a:hover{
+    background: #132326;
+    color: #88A34F;
 }
 
 .navbar a > img {
