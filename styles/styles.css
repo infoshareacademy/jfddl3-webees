@@ -346,16 +346,17 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     margin-top: 10%;
 }
 h2{
-    font-size: 45px;
+    /*font-size: 45px;*/
     color: #FFD99B;
     font-weight: bold;
     text-align: center;
+    margin-top: 0;
 }
 #info {
     font-size: 14px;
     color:#FFD99B ;
     background-color:#132326;
-    padding-bottom: 12em;
+
 }
 
 #info .container{
@@ -505,18 +506,23 @@ h2{
 
 .name{
     color: #FFD99B;
-    font-weight: bold;F
+    font-weight: bold;
 }
-
+#team{
+    margin-top: 5%;
+}
 
 /*FOOTER*/
 footer {
     color: #132326;
     background-color: #FFD99B;
     text-align: center;
-    padding: 10px 0 15px 0;
+    margin-bottom: 0px;
+    /*padding: 10px 0 15px 0;*/
 }
-
-footer .right-reserved{
-    display:inline-flex;
+.foot{
+    color:#132326;
 }
+/*footer .right-reserved{*/
+    /*display:inline;*/
+/*}*/
