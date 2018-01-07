@@ -341,17 +341,19 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     }
 }
 
+
 #info h2{
     font-size: 45px;
     color: #FFD99B;
     font-weight: bold;
     text-align: center;
+    margin-top: 0;
 }
+
 #info {
     font-size: 14px;
     color:#FFD99B ;
     background-color:#132326;
-    /* padding-bottom: 12em; */
 }
 
 #info .container{
@@ -360,18 +362,10 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     align-items: center;
 }
 
-/* #info .col-xs-4,
-#info .col-sm-4,
-#info .col-md-4,
-#info .col-ld-4{
-    margin-top: 10em;
-} */
-
 #info img{
     width: 100%;
     height: auto;
     margin-top: 20px;
-
 }
 
 #info p{
@@ -466,7 +460,6 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     border-radius: 50%;
     line-height: 2em;
     text-align: center;
-
 }
 
 .container.team-content{
@@ -485,16 +478,20 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     display: flex;
     justify-content: space-between;
 }
+
 .row.team-row img.animate{
     filter:alpha(opacity=50);
     transform:rotateY(360deg);
 }
+
 .row.team-row{
     max-width: auto;
 }
+
 .container.team-content .fa.fa-facebook-square{
     font-size: 2em;
 }
+
 .container.team-content .fa.fa-linkedin-square{
     font-size: 3em;
     color: #FFD99B;
@@ -502,10 +499,13 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 
 .name{
     color: #FFD99B;
-    font-weight: bold;F
+    font-weight: bold;
 }
 
-/*FOOTER*/
+#team{
+    margin-top: 5%;
+}
+
 .footer {
     color: #132326;
     min-height: 180px;
@@ -515,4 +515,8 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     position: absolute;
     top: 100vh;
     transform: translate(0, -100%);
+}
+
+.foot{
+    color:#132326;
 }
