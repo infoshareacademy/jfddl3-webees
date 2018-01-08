@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WeBees Map App</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon-60.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon-60.png"/>
     <!--TODO-->
 
     <!--CSS-->
@@ -19,159 +19,169 @@
 </head>
 
 <body>
-    <!--NAVBAR-->
-    <header>
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a href="#">
-                        <img src="images/leaves.svg" />
-                    </a>
+<!--NAVBAR-->
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a href="#">
+                    <img src="images/leaves.svg"/>
+                </a>
 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1"
                         aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" id="myMenu">
+                    <li data-menuanchor="firstPage" class="active">
+                        <a href="#firstPage">O nas
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li data-menuanchor="secondPage" id="zaplanuj">
+                        <a href="#secondPage">Zaplanuj bieg</a>
+                    </li>
+                    <li data-menuanchor="thirdPage" id="funkcje">
+                        <a href="#thirdPage">Funkcje</a>
+                    </li>
+                    <li data-menuanchor="fourthPage" id="zespol">
+                        <a href="#fourthPage">Zespół</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="zaloguj">
+                        <a href="#">Zaloguj</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</header>
+<!--/NAVBAR-->
+
+<div id="fullpage">
+    <div class="section main" id="hero">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="circle">
+                    <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
+                    <h3>Zapisz się na&nbsp;premierę!</h3>
+                    <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET">
+                        <input type="email" name="email" autocomplete="on" placeholder="Podaj email"
+                               alt="Podaj adres email" required>
+                        <input type="submit" value="Zapisz się!">
+                    </form>
+                </div>
+                <div class="scroll">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/HERO-->
+
+    <!--INFO-->
+    <div class="section" id="info">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+                    <img src="./images/avenue-2215317_1920.jpg " alt="forest">
+                    <div class="icons-list">
+                        <a href="http://facebook.com" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a href="http://instagram.com" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="http://twitter.com" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+                    <h2>Wrzucaj zdjęcia z biegów</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem blanditiis eius error
+                        exercitationem
+                        fuga id, illum in itaque optio placeat quaerat quibusdam quod reiciendis repellendus,
+                        repudiandae
+                        sapiente totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem
+                        blanditiis
+                        eius error exercitationem fuga id, illum in itaque optio placeat quaerat quibusdam quod
+                        reiciendis
+                        repellendus, repudiandae sapiente totam. </p>
+                    <button type="button" class="right" data-toggle="modal" data-target="#myModal1">
+                        Więcej
                     </button>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav" id="myMenu">
-                        <li data-menuanchor="firstPage" class="active">
-                            <a href="#firstPage">O nas
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li data-menuanchor="secondPage" id="zaplanuj">
-                            <a href="#secondPage">Zaplanuj bieg</a>
-                        </li>
-                        <li data-menuanchor="thirdPage" id="funkcje">
-                            <a href="#thirdPage">Funkcje</a>
-                        </li>
-                        <li data-menuanchor="fourthPage" id="zespol">
-                            <a href="#fourthPage">Zespół</a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li id="zaloguj">
-                            <a href="#">Zaloguj</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-    </header>
-    <!--/NAVBAR-->
-
-    <div id="fullpage">
-        <div class="section main" id="hero">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="circle">
-                        <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
-                        <h3>Zapisz się na&nbsp;premierę!</h3>
-                        <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET">
-                            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email" required>
-                            <input type="submit" value="Zapisz się!">
-                        </form>
-                    </div>
-                    <div class="scroll">
-                        <div class="wheel"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/HERO-->
-
-        <!--INFO-->
-        <div class="section" id="info">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
-                        <img src="./images/avenue-2215317_1920.jpg " alt="forest">
-                        <div class="icons-list">
-                            <a href="http://facebook.com" target="_blank">
-                                <i class="fa fa-facebook-square"></i>
-                            </a>
-                            <a href="http://instagram.com" target="_blank">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                            <a href="http://twitter.com" target="_blank">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
-                        <h2>Wrzucaj zdjęcia z biegów</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem blanditiis eius error exercitationem
-                            fuga id, illum in itaque optio placeat quaerat quibusdam quod reiciendis repellendus, repudiandae
-                            sapiente totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem blanditiis
-                            eius error exercitationem fuga id, illum in itaque optio placeat quaerat quibusdam quod reiciendis
-                            repellendus, repudiandae sapiente totam. </p>
-                        <button type="button" class="right" data-toggle="modal" data-target="#myModal1">
-                            Więcej
-                        </button>
-                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <h4 class="modal-title" id="myModalLabel1">Rób zdjęcia na trasie</h4>
-                                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus enim, explicabo
-                                            fugiat laborum nesciunt quasi velit. Culpa cum earum ex maxime numquam obcaecati
-                                            pariatur, perferendis perspiciatis quisquam, reprehenderit, sunt vel?</p>
+                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel1">Rób zdjęcia na trasie</h4>
+                                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus enim,
+                                        explicabo
+                                        fugiat laborum nesciunt quasi velit. Culpa cum earum ex maxime numquam obcaecati
+                                        pariatur, perferendis perspiciatis quisquam, reprehenderit, sunt vel?</p>
 
 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="right" data-dismiss="modal">Zamknij</button>
-                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="right" data-dismiss="modal">Zamknij</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
-                        <h2>Kompatybilny z pulsometrami</h2>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos dolores ducimus, eaque earum
-                            eos eum eveniet fugit ipsum libero molestiae neque nostrum quam quasi quia recusandae, sed tempore
-                            velit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam autem, molestias
-                            nobis officia provident recusandae repellat rerum sed vitae! A dignissimos non qui? A aliquam
-                            fugiat modi numquam quisquam.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Adipisci aliquam earum eius eligendi esse ex facilis fugiat fugit, minima modi molestiae neque
-                            quasi quos ratione rerum sapiente sed soluta vitae.
-                        </p>
-                        <button type="button" class="right" data-toggle="modal" data-target="#myModal2">
-                            Więcej
-                        </button>
-                        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <h4 class="modal-title" id="myModalLabel">Jak dobrać pulsometr?</h4>
-                                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi aut cumque
-                                            delectus, distinctio et eum fugiat hic inventore, labore magnam nobis, non perspiciatis
-                                            qui rem sint tempore ullam vel?</p>
-                                    </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-ld-4">
+                    <h2>Kompatybilny z pulsometrami</h2>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos dolores ducimus, eaque
+                        earum
+                        eos eum eveniet fugit ipsum libero molestiae neque nostrum quam quasi quia recusandae, sed
+                        tempore
+                        velit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam autem, molestias
+                        nobis officia provident recusandae repellat rerum sed vitae! A dignissimos non qui? A aliquam
+                        fugiat modi numquam quisquam.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Adipisci aliquam earum eius eligendi esse ex facilis fugiat fugit, minima modi molestiae neque
+                        quasi quos ratione rerum sapiente sed soluta vitae.
+                    </p>
+                    <button type="button" class="right" data-toggle="modal" data-target="#myModal2">
+                        Więcej
+                    </button>
+                    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Zamknij">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">Jak dobrać pulsometr?</h4>
+                                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi aut
+                                        cumque
+                                        delectus, distinctio et eum fugiat hic inventore, labore magnam nobis, non
+                                        perspiciatis
+                                        qui rem sint tempore ullam vel?</p>
+                                </div>
 
 
-                                    <div class="modal-footer">
-                                        <button type="button" class="right" data-dismiss="modal">Zamknij</button>
+                                <div class="modal-footer">
+                                    <button type="button" class="right" data-dismiss="modal">Zamknij</button>
 
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -179,83 +189,87 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="section">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-center">
-                        <h3 class="h3-headings">Zapisuj najlepsze wyniki</h3>
-                        <i class="fa fa-trophy" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-center">
-                        <h3 class="h3-headings">Doskonały dla rowerzystów</h3>
-                        <i class="fa fa-bicycle" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-center">
-                        <h3 class="h3-headings">Przeglądaj nowe trasy</h3>
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    </div>
+    <div class="section" id="info">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-center">
+                    <h3 class="h3-headings">Zapisuj najlepsze wyniki</h3>
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-center">
+                    <h3 class="h3-headings">Doskonały dla rowerzystów</h3>
+                    <i class="fa fa-bicycle" aria-hidden="true"></i>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-center">
+                    <h3 class="h3-headings">Przeglądaj nowe trasy</h3>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
+    </div>
 
 
-
-        <div class="section" id="team">
-            <h2>Nasz zaspół</h2>
-            <div class="container team-content">
-                <div class="row team-row">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <div><img src="images/pawel1.jpg" alt="obrazek naszej druzyny"/></div>
-                <p class="name">Paweł Lorencowicz</p>
-                <a href="https://www.linkedin.com/in/plorencowicz/" target="_blank">
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <div><img src="images/kasia1_360.jpg" alt="obrazek naszej druzyny"/></div>
-                <p class="name">Katarzyna Grum</p>
-                <a href="https://www.linkedin.com/in/katarzyna-grum/" target="_blank">
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <div><img src="images/rsz_grzesiek2.jpg" alt="obrazek naszej druzyny"/></div>
-                <p class="name">Grzegorz Radomski</p>
-                <a href="https://www.linkedin.com/" target="_blank">
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <div><img src="images/rsz_ola_2.png" alt="obrazek naszej druzyny"/></div>
-                <p class="name">Aleksandra Jagodzińska</p>
-                <a href="https://www.linkedin.com/in/aleksandra-jagodzinska/" target="_blank">
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                </a>
-                    </div>
+    <div class="section" id="team">
+        <div class="container team-content">
+            <h2 id="zespol-h2">Nasz zaspół</h2>
+            <div class="row team-row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div><img src="images/pawel1.jpg" alt="obrazek naszej druzyny"/></div>
+                    <p class="name">Paweł Lorencowicz</p>
+                    <a href="https://www.linkedin.com/in/plorencowicz/" target="_blank">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </a>
                 </div>
-                <div class="row footer">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div><img src="images/kasia1_360.jpg" alt="obrazek naszej druzyny"/></div>
+                    <p class="name">Katarzyna Grum</p>
+                    <a href="https://www.linkedin.com/in/katarzyna-grum/" target="_blank">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div><img src="images/rsz_grzesiek2.jpg" alt="obrazek naszej druzyny"/></div>
+                    <p class="name">Grzegorz Radomski</p>
+                    <a href="https://www.linkedin.com/" target="_blank">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div><img src="images/rsz_ola_2.png" alt="obrazek naszej druzyny"/></div>
+                    <p class="name">Aleksandra Jagodzińska</p>
+                    <a href="https://www.linkedin.com/in/aleksandra-jagodzinska/" target="_blank">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div id="footer">
                     <h2>Planowane wydanie aplikacji: Grudzień 2017</h2>
-                    <p class="right-reserved">Prawa autorskie: Webees InfoShare Academy Ostatnia aktualizacja strony 6.12.2017r</p>
+                    <p class="right-reserved">Prawa autorskie: Webees InfoShare Academy Ostatnia aktualizacja strony
+                        6.12.2017r</p>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
 
-        <!--JS-->
-        <script src="js/in-view.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="bootstrap-3.3.7-dist/js/script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#fullpage').fullpage({
-                    anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
-                });
-            });
-        </script>
+<!--JS-->
+<script src="js/in-view.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#fullpage').fullpage({
+            anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
+        });
+    });
+</script>
 </body>
 
 </html>
