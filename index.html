@@ -12,6 +12,7 @@
 
     <!--CSS-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
@@ -77,15 +78,17 @@
                     <div class="circle">
                         <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
                         <h3>Zapisz się na&nbsp;premierę!</h3>
-                        <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET">
-                            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email" required>
-                            <input type="submit" value="Zapisz się!">
-                        </form>
+        <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET" onsubmit="window.location.href='file:///Users/pawel/Documents/Kurs%20Front%20End/jfddl3-webees/game/game.html'" target="_blank">
+            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email"
+                   required>
+            <input type="submit" value="Zapisz się!" >
+        </form>
                     </div>
                     <div class="scroll">
                         <div class="wheel"></div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!--/HERO-->
@@ -243,6 +246,7 @@
         </div>
 
 
+
         <!--JS-->
         <script src="js/in-view.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -251,13 +255,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
         <script>
             $(document).ready(function () {
-                if(window.matchMedia("(min-width:900px)").matches) {
-                    $('#fullpage').fullpage({
-                        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
-                    });
-                }
+                $('#fullpage').fullpage({
+                    anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
+                });
             });
+              displayCookies();
+    window.addEventListener('scroll', moveToTopButtonDisplay);
+    moveToTopButton.addEventListener('click', scrollToTop());
         </script>
+
 </body>
 
 </html>
