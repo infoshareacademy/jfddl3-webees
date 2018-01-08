@@ -126,30 +126,31 @@ body {
     background: #88A34F;
     color: #132326;
 }
-#zaplanuj {
-    color:#88A34F;
+
+#onas a:focus {
+    color: #FFD99B ;
 }
-#zaplanuj:hover{
-    color: #132326;
+
+#onas a:focus {
+    background-color: #132326 ;
 }
-#funkcje {
-    color:#88A34F;
+
+#zaplanuj a:focus {
+    color: #FFD99B ;
 }
-#funkcje:hover{
-    color: #132326;
+
+#funkcje a:focus {
+    color: #FFD99B ;
 }
-#zaloguj {
-    color:#88A34F;
+
+#zaloguj a:focus {
+    color: #FFD99B ;
 }
-#zaloguj:hover{
-    color: #132326;
+
+#zespol a:focus {
+    color: #FFD99B ;
 }
-#zespol{
-    color: #88A34F;
-}
-#zespol:hover{
-    color: #132326;
-}
+
 .navbar-default
 .navbar-nav>.active>a,
 .navbar-default
@@ -427,9 +428,9 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     z-index: 5;
 }
 
-#moveToTopButton:hover{
+#moveToTopButton:hover {
     opacity: 1;
-
+}
 
 #info h2{
     font-size: 45px;

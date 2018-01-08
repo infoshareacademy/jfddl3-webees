@@ -1,3 +1,8 @@
+displayCookies();
+let moveToTopButton = document.getElementById('moveToTopButton')
+// window.addEventListener('scroll', moveToTopButtonDisplay);
+// moveToTopButton.addEventListener('click', scrollToTop());
+
 function displayCookies(){
     if(localStorage.getItem('cookies') !== 'set') {
         var cookiesBox = document.createElement("div");
@@ -12,6 +17,7 @@ function displayCookies(){
     }
 }
 
+window.setTimeout(moveToTopButtonDisplay,10)
 function moveToTopButtonDisplay(){
     if(window.pageYOffset !== 0)
         moveToTopButton.style.display = ""
@@ -19,24 +25,24 @@ function moveToTopButtonDisplay(){
         moveToTopButton.style.display = "none"
 }
 
-function scrollToTop(){
-    setTimeout(function(){
-        window.scrollTo(0, window.pageYOffset-20)
-        if(window.pageYOffset>0)
-            scrollToTop()
-    }, 1)
-}
-
-function scrollToSection(element,x=20){
-    setTimeout(function(){
-        x = window.pageYOffset > element.offsetTop ? x : -x
-        window.scrollTo(0, window.pageYOffset-x)
-        if(Math.abs(window.pageYOffset - element.offsetTop) >= 20)
-            scrollToSection(element)
-        else if(Math.abs(window.pageYOffset - element.offsetTop) > 0)
-            scrollToSection(element, Math.abs(window.pageYOffset - element.offsetTop))
-    }, 1)
-}
+// function scrollToTop(){
+//     setTimeout(function(){
+//         window.scrollTo(0, window.pageYOffset-20)
+//         if(window.pageYOffset>0)
+//             scrollToTop()
+//     }, 1)
+// }
+//
+// function scrollToSection(element,x=20){
+//     setTimeout(function(){
+//         x = window.pageYOffset > element.offsetTop ? x : -x
+//         window.scrollTo(0, window.pageYOffset-x)
+//         if(Math.abs(window.pageYOffset - element.offsetTop) >= 20)
+//             scrollToSection(element)
+//         else if(Math.abs(window.pageYOffset - element.offsetTop) > 0)
+//             scrollToSection(element, Math.abs(window.pageYOffset - element.offsetTop))
+//     }, 1)
+// }
 
 // event window on scroll
 // staly czas przeskoku. rozna predkosc przesuwu

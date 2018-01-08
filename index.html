@@ -12,7 +12,6 @@
 
     <!--CSS-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
@@ -20,6 +19,12 @@
 </head>
 
 <body>
+<!-- MOVE TO TOP BUTTON -->
+<div id="moveToTopButton">
+    <a href="#firstPage"><span class='glyphicon glyphicon-arrow-up' aria-hidden='true'></span></a>a>
+</div>
+
+
 <!--NAVBAR-->
 <header>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -43,7 +48,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="myMenu">
-                    <li data-menuanchor="firstPage" class="active">
+                    <li data-menuanchor="firstPage" class="active" id="onas">
                         <a href="#firstPage">O nas
                             <span class="sr-only">(current)</span>
                         </a>
@@ -72,26 +77,28 @@
 </header>
 <!--/NAVBAR-->
 
-    <div id="fullpage">
-        <div class="section main" id="hero">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="circle">
-                        <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
-                        <h3>Zapisz się na&nbsp;premierę!</h3>
-        <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET" onsubmit="window.location.href='file:///Users/pawel/Documents/Kurs%20Front%20End/jfddl3-webees/game/game.html'" target="_blank">
-            <input type="email" name="email" autocomplete="on" placeholder="Podaj email" alt="Podaj adres email"
-                   required>
-            <input type="submit" value="Zapisz się!" >
-        </form>
-                    </div>
-                    <div class="scroll">
-                        <div class="wheel"></div>
-                    </div>
-
+<div id="fullpage">
+    <div class="section main" id="hero">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="circle">
+                    <h1>NAJLEPSZA APLIKACJA BIEGOWA W&nbsp;INTERNECIE</h1>
+                    <h3>Zapisz się na&nbsp;premierę!</h3>
+                    <form action="https://az-serwer1709408.online.pro/mailer/mailer.php" method="GET"
+                          onsubmit="window.location.href='file:///Users/pawel/Documents/Kurs%20Front%20End/jfddl3-webees/game/game.html'"
+                          target="_blank">
+                        <input type="email" name="email" autocomplete="on" placeholder="Podaj email"
+                               alt="Podaj adres email"
+                               required>
+                        <input type="submit" value="Zapisz się!">
+                    </form>
+                </div>
+                <div class="scroll">
+                    <div class="wheel"></div>
                 </div>
 
             </div>
+
         </div>
     </div>
     <!--/HERO-->
@@ -195,7 +202,6 @@
         </div>
     </div>
 
-
     <div class="section" id="info">
         <div class="container-fluid">
             <div class="row">
@@ -214,7 +220,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="section" id="team">
         <div class="container team-content">
@@ -260,23 +265,39 @@
     </div>
 </div>
 
-        <script src="js/in-view.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="bootstrap-3.3.7-dist/js/script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
-        <script>
-            $(document).ready(function () {
-              if (window.matchMedia("(min-width: 1200)").matches) {
-                $('#fullpage').fullpage({
-                    anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
-                });
-              }
+<script src="js/in-view.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        if (window.matchMedia("(min-width: 1000px)").matches) {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage']
             });
-              displayCookies();
-    window.addEventListener('scroll', moveToTopButtonDisplay);
-    moveToTopButton.addEventListener('click', scrollToTop());
-        </script>
+        }
+
+    });
+
+    function displayCookies(){
+        if(localStorage.getItem('cookies') !== 'set') {
+            var cookiesBox = document.createElement("div");
+            cookiesBox.setAttribute('id', 'cookiesBox');
+            document.body.appendChild(cookiesBox);
+            cookiesBox.innerHTML = "<div><h4>Strona wykorzystuje pliki cookies.</h4><h4 id='acceptCookies'>Akceptuję</h4></div><p>W ramach naszej witryny stosujemy pliki cookies w celu świadczenia Państwu usług na najwyższym poziomie, w tym w sposób dostosowany do indywidualnych potrzeb. Korzystanie z witryny bez zmiany ustawień dotyczących cookies oznacza, że będą one zamieszczane w Państwa urządzeniu końcowym. Możecie Państwo dokonać w każdym czasie zmiany ustawień dotyczących cookies.</p>"
+
+            acceptCookies.addEventListener('click',function(){
+                localStorage.setItem('cookies', 'set');
+                cookiesBox.remove()
+            })
+        }
+    }
+    displayCookies();
+
+</script>
 </body>
 
 </html>
