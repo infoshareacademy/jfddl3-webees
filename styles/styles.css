@@ -91,6 +91,7 @@ body {
     color: #88A34F;
 }
 
+
 .navbar-default {
     border: none;
     background-color: #132326;
@@ -386,6 +387,50 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 }
 
 
+/* *** COOKIES *** */
+
+#cookiesBox{
+    position: fixed;
+    bottom: 0;
+    background-color: #224732;
+    padding: 1em;
+    font-style: italic;
+}
+
+#cookiesBox div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#acceptCookies{
+    cursor: pointer;
+    color: white;
+}
+
+/* *** MOVE TO TOP BUTTON *** */
+
+#moveToTopButton{
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 0.5em;
+    background-color: #132326;
+    color: #88A34F;
+    position: fixed;
+    bottom: 0.25em;
+    right: 0.25em;
+    opacity: 0.75;
+    transition: 0.5s;
+    z-index: 5;
+}
+
+#moveToTopButton:hover{
+    opacity: 1;
+
+
 #info h2{
     font-size: 45px;
     color: #FFD99B;
@@ -563,4 +608,5 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 
 .foot{
     color:#132326;
+
 }
