@@ -81,6 +81,11 @@ footer {
     display:inline-flex;
 }
 
+.h3-headings{
+    color: #88A34F;
+    font-size: 3em;
+
+}
 
 .right{
     background: transparent;

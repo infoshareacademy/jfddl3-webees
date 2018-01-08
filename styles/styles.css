@@ -553,9 +553,8 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 
 .container.team-content{
     width: auto;
-    height: 1000px;
     text-align: center;
-    position: relative;
+    margin-top: -10%;
 }
 
 .row.team-row img{
@@ -564,7 +563,6 @@ input:focus:-moz-placeholder { /* Firefox 18- */
     max-width: 100%;
     height: auto;
     padding: 50px;
-    display: flex;
     justify-content: space-between;
 }
 
@@ -574,7 +572,7 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 }
 
 .row.team-row{
-    max-width: auto;
+
 }
 
 .container.team-content .fa.fa-facebook-square{
@@ -592,21 +590,22 @@ input:focus:-moz-placeholder { /* Firefox 18- */
 }
 
 #team{
-    margin-top: 5%;
+    position: relative;
 }
 
-.footer {
+#footer {
     color: #132326;
-    min-height: 180px;
+    padding: 1.5em 0;
     width: 100%;
     background-color: #FFD99B;
     text-align: center;
     position: absolute;
-    top: 100vh;
-    transform: translate(0, -100%);
+    bottom: 0;
 }
 
-.foot{
-    color:#132326;
+#zespol-h2{
+    color: #88A34F;
+    font-size: 3em;
+    text-align: center;
 
 }
